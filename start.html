@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas {
+        border: 1px solid #9C9898;
+      }
+    </style>
+    <script src="kinetic-v4.0.1.js"></script>
+        <script src="engine/preload.js"></script>
+                <script src="engine/engine.js"></script>
+                <script src="engine/questions.js"></script>
+            <script src="levels/level01.js"></script>
+            <script src="levels/level02.js"></script>
+            <script src="levels/level03.js"></script>
+            <script src="levels/level04.js"></script>
+            <script src="levels/level05.js"></script>
+            
+            
+              <script src="levels/level01_fin.js"></script>
+			  <script src="levels/level02_fin.js"></script>
+              <script src="levels/level03_fin.js"></script>
+              <script src="levels/level04_fin.js"></script>
+              
+					<script src="levels/state01.js"></script>
+             	  	<script src="levels/state02.js"></script>
+            	    <script src="levels/state03.js"></script>
+                    <script src="levels/state04.js"></script>
+                    <script src="levels/state05.js"></script>
+                    <script src="levels/state06.js"></script>
+                    <script src="levels/state07.js"></script>
+                                
+<script>
+
+// Onload, Go to function Start en daarna start Level 1
+
+window.onload = function(){
+start();
+initState01();
+if(debug == 1)
+console.log("window.onload finished");
+
+}
+</script>
+      
+	
+  </head>
+  <body onmousedown="return false;">
+    <div id="container"></div>
+  </body>
+</html>
