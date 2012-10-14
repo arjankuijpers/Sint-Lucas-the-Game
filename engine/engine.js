@@ -589,7 +589,10 @@ default:
 }
 
 	function showPopUp(text, type)
-	{		
+	{
+		achievement.currentTime = 0;
+		achievement.play();
+		
 		log("R: 593 engine.js: show PopUp function start");
 		stage.add(popUpLayer);
 
