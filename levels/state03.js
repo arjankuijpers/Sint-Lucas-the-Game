@@ -93,7 +93,7 @@ console.log("initializing State 03(Menu)");
 		  opacity: 0,
         });
 		
-		m_ScoreText.on('mouseup',function(){
+		m_ScoreText.on('mouseup tap',function(){
 			if(debug == 1)
 			{
 			console.log("Clicked Top Score, Go to topscores");	
@@ -118,7 +118,7 @@ console.log("initializing State 03(Menu)");
 		  opacity: 0,
         });
 		
-		m_CreditsText.on('mouseup',function(){
+		m_CreditsText.on('mouseup tap',function(){
 			if(debug == 1)
 			{
 			console.log("Clicked Play, Go to Credits(State05)");	
