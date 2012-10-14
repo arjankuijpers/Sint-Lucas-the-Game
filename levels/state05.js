@@ -1,6 +1,12 @@
 //Start State05 (Credits)
 
 function initState05(){
+	
+	credits.currentTime = 0;
+	credits.volume = 1;
+	credits.play();
+	
+	
 	stage.add(textLayer);
 	stage.add(characterLayer);
 	stage.add(secondTextLayer);
@@ -111,7 +117,31 @@ console.log("initializing State 05(Credits)");
 			setCText(600,250,25, "Createc");
 		},35000);
 		
+		setTimeout(function(){
+			credits.volume-=0.1
+		},39000);		
+		setTimeout(function(){
+			credits.volume-=0.1
+		},40000);
+		
+		setTimeout(function(){
+			credits.volume-=0.1
+		},41000);
+		setTimeout(function(){
+			credits.volume-=0.1
+		},42000);
+		setTimeout(function(){
+			credits.volume-=0.2
+		},43000);
+		setTimeout(function(){
+			credits.volume-=0.2
+		},44000);
+		setTimeout(function(){
+			credits.volume-=0.2
+		},45000);
+		
 				setTimeout(function(){
+					credits.pause();
 			stage.reset();
 			initState01();
 		},45000);
