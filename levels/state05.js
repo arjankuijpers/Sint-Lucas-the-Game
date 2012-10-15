@@ -2,8 +2,10 @@
 
 function initState05(){
 	
+	log("<AUDIO> reset Credits time and volume");
 	credits.currentTime = 0;
 	credits.volume = 1;
+	log("<AUDIO> play credits");
 	credits.play();
 	
 	
@@ -97,25 +99,28 @@ console.log("initializing State 05(Credits)");
 					secondTextLayer.moveToTop();
 		},20000);
 		
-		setTimeout(function(){
-			textLayer.removeChildren();
-			setCText(600,200,30, "Character Design");
-			setCText(600,250,20, "Rens Verspagen");
-		},25000);
+		setTimeout(function()
+			{
+				textLayer.removeChildren();
+				setCText(600,200,30, "Character Design");
+				setCText(600,250,20, "Rens Verspagen");
+			},25000);
 		
-		setTimeout(function(){
-			textLayer.removeChildren();
-			splash.src = "assets/arjan_kuijpers.png";
-			setCText(550,200,30, "AI / Gameplay &\n  Core system design");
-			setCText(600,300,20, "Arjan Kuijpers");
-					secondTextLayer.moveToTop();
-		},30000);
+		setTimeout(function()
+			{
+				textLayer.removeChildren();
+				splash.src = "assets/arjan_kuijpers.png";
+				setCText(550,200,30, "AI / Gameplay &\n  Core system design");
+				setCText(600,300,20, "Arjan Kuijpers");
+				secondTextLayer.moveToTop();
+			},30000);
 		
-				setTimeout(function(){
-			textLayer.removeChildren();
-			setCText(550,200,30, "Thank you for playing");
-			setCText(600,250,25, "Createc");
-		},35000);
+		setTimeout(function()
+			{
+				textLayer.removeChildren();
+				setCText(550,200,30, "Thank you for playing");
+				setCText(600,250,25, "Createc");
+			},35000);
 		
 		setTimeout(function(){
 			credits.volume-=0.1
@@ -137,14 +142,21 @@ console.log("initializing State 05(Credits)");
 			credits.volume-=0.2
 		},44000);
 		setTimeout(function(){
-			credits.volume-=0.2
+			credits.volume-=0.1
 		},45000);
 		
-				setTimeout(function(){
-					credits.pause();
-			stage.reset();
-			initState01();
-		},45000);
+		
+		setTimeout(function()
+			{
+				log("<AUDIO> pause credits");
+				credits.pause();
+					
+				log("Reset Stage");
+				stage.reset();
+			
+				log("Init State01");
+				initState01();
+			},45000);
 		
 		
 		

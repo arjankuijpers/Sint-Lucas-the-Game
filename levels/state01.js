@@ -72,12 +72,17 @@ dragAble = new Kinetic.Image(
 	characterLayer.add(dragAble);
 	
 	dragAble.on('dragstart', function() {
+				rectStart.moveToTop();
               dragAble.moveToTop();
               characterLayer.draw();
+			  rectStart.setOpacity(0.5);
 			  if(debug ==1)
 			  {
 			  console.log("Drag Start 'dragAble image'");
 			  }
+			  
+			  
+			  
 			});
 			
 			dragAble.on('dragmove', function() {
@@ -91,6 +96,9 @@ dragAble = new Kinetic.Image(
 				 if(debug == 1)
 				console.log("Drag Ended 'dragAble'")
 				document.body.style.cursor = 'default';
+				
+				rectStart.setOpacity(0);
+				characterLayer.draw();
 				
 				if(dragAble.getX() >= a_X1 && dragAble.getX() <= a_X2 && dragAble.getY()>=a_Y1 && dragAble.getY() <= a_Y2)
 				{
@@ -126,7 +134,15 @@ dragAble = new Kinetic.Image(
 		});
 }
 
-
+var rectStart = new Kinetic.Rect({
+          x: 675,
+		  y: 100,
+          width: 200,
+          height: 50,
+          fill: 'orange',
+		  opacity: 0
+        });
+		characterLayer.add(rectStart);
 
 
 
