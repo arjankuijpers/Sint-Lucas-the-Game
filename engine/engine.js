@@ -32,7 +32,7 @@ var inLevel = 0;
 var questNumber = 0;
 var allQuestNumber = 0;
 
-var levelFinal = 0;
+var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
 var levelUnlock = new Array();
 var goodQuestsL1 = new Array();

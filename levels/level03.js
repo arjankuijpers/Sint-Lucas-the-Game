@@ -40,7 +40,7 @@ log("Start Level03");
 			image: he2,
 		});
 	
-		hudLayer.add(hudElement2);
+		//hudLayer.add(hudElement2);
 		hudLayer.draw();
 		
 	}

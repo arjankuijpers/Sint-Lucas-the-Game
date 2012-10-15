@@ -40,7 +40,7 @@ log("Start Level05 (Final)");
 			image: he2,
 		});
 	
-		hudLayer.add(hudElement2);
+	//	hudLayer.add(hudElement2);
 		hudLayer.draw();
 		
 	}

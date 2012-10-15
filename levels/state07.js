@@ -17,21 +17,16 @@ function initState07(){
 							y: 0,
 							image: splash,
 							draggable: false,
-							opacity: 0,
+							opacity: 1,
 						});
 		
 							backgroundLayer.add(background);
 							stage.add(backgroundLayer);
-		
-							background.transitionTo(
-							{
-     					       opacity: 1,
-          					   duration: 1,
-							});
-						}
+							showPopUp("Test achievement", 1);
+					 }
 	
-		log("R: 8 -  State07.js: levelFinal = 1");		
-		showPopUp("Test achievement", 1);
+			log("R: 8 -  State07.js: levelFinal = 1");		
+		
 							
 			}
 			
