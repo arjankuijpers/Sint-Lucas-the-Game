@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05061 ,QJS integrated"
+var version = "Game v05062 ,QJS integrated"
 
 var debug = 1;
 
@@ -778,7 +778,7 @@ function setCText(posX, posY, size, text){
           text: text,
           fontSize: size,
           fontFamily: 'Calibri',
-          textFill: '#FF5C00',
+          textFill: 'white',
           align: 'center',
           shadow: {
             color: 'black',

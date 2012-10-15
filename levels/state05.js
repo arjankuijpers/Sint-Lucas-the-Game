@@ -47,7 +47,7 @@ console.log("initializing State 05(Credits)");
           text: 'Credits',
           fontSize: 50,
           fontFamily: 'Calibri',
-          textFill: '#FF7600',
+          textFill: 'white',
           align: 'center',
           fontStyle: 'italic',
           shadow: {
