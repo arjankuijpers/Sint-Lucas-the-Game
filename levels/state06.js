@@ -93,7 +93,7 @@ console.log("Start Text Messages");
 		textLayer.removeChildren();
 		textLayer.draw();
 		
-		splash.src = "assets/welkom01.png";
+		splash.src = "assets/mbg.png";
 		if(debug == 1)
 		{
 		console.log("Welkom01 bg geladen (vervangen voor Createc)");
