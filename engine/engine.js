@@ -810,10 +810,10 @@ function setSelectText(text){
           text: text,
           fontSize: 40,
           fontFamily: 'Calibri',
-          textFill: 'orange',
+          textFill: 'white',
           align: 'center',
           shadow: {
-            color: 'white',
+            color: 'black',
             blur: 1,
             offset: [5, 5],
             opacity: 0
