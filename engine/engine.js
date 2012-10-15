@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05060 ,QJS integrated"
+var version = "Game v05061 ,QJS integrated"
 
 var debug = 1;
 
@@ -813,7 +813,7 @@ function setSelectText(text){
           textFill: 'orange',
           align: 'center',
           shadow: {
-            color: 'black',
+            color: 'white',
             blur: 1,
             offset: [5, 5],
             opacity: 0
@@ -871,13 +871,23 @@ function setQText(posX, posY, text){
 var m_MainText = new Kinetic.Text({
           x: posX,
           y: posY,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8040',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: text,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 600,
           padding: 20,
           align: 'center',
@@ -905,13 +915,23 @@ function setAText(posX, posY){
 var a_MainText = new Kinetic.Text({
           x: posX,
           y: posY,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8900',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: "A. " + answer1,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 380,
           padding: 20,
           align: 'center',
@@ -946,13 +966,23 @@ var a_MainText = new Kinetic.Text({
 		var b_MainText = new Kinetic.Text({
           x: posX,
           y: posY + 50,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8900',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: "B. " + answer2,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 380,
           padding: 20,
           align: 'center',
@@ -988,13 +1018,23 @@ var a_MainText = new Kinetic.Text({
 		var c_MainText = new Kinetic.Text({
           x: posX,
           y: posY + 100,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8900',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: "C. "+ answer3,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 380,
           padding: 20,
           align: 'center',
@@ -1029,13 +1069,23 @@ var a_MainText = new Kinetic.Text({
 		var d_MainText = new Kinetic.Text({
           x: posX,
           y: posY + 150,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8900',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: "D. " + answer4,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 380,
           padding: 20,
           align: 'center',
@@ -1169,13 +1219,23 @@ function setText(posX, posY, text){
 m_MainText = new Kinetic.Text({
           x: posX,
           y: posY,
-          stroke:'black',
+          stroke:'#ecede9',
           strokeWidth: 5,
-          fill: '#FF8900',
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
           text: text,
           fontSize: 14,
           fontFamily: 'Calibri',
-          textFill: '#555',
+          textFill: 'white',
           width: 380,
           padding: 20,
           align: 'center',
