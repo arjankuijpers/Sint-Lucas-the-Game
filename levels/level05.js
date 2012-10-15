@@ -66,8 +66,8 @@ log("Start Level05 (Final)");
 		log("set Text questionHUD - R146 engine.js");
 		
 		log("Set Score Text:: R69 - level05.js");
-		setScoreText(125,437,40,String(score));
-		setHText(200,450,20," Score");
+		setScoreText(125,465,30,String(score));
+		setHText(200,470,20," Score");
 		
 		log("Done Setting Hud Stats");
 		

@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05058 ,QJS integrated"
+var version = "Game v05060 ,QJS integrated"
 
 var debug = 1;
 
@@ -271,12 +271,11 @@ answerGood = answerArray[4];
 
 		questNumber++;
 		allQuestNumber++;
-		setHText(100,0,20, 'Level: ' + levelSave);
-		setHText(225,0,20,"Vraag: " + questNumber + "/" + inLevel);
-		setPB();
-		setScoreText(125,437,40,String(score));
-		setHText(200,450,20," Score");
-		setHText(450,430,20, progress[levelSave] + "%");
+		setHText(100,0,15, 'Level: ' + levelSave);
+		setHText(225,0,15,"Vraag: " + questNumber + "/" + inLevel);
+		setScoreText(125,465,30,String(score));
+		setHText(200,470,20," Score");
+		setHText(450,470,20, progress[levelSave] + "%");
 
 		setQText(200,50, question_OS);
 		setAText(300, 150);
@@ -743,26 +742,6 @@ default:
 	}
 
 
-
-function setPB(){
-		var rect = new Kinetic.Rect({
-          x: 335,
-          y: 470,
-          width: 285/100*progress[levelSave],
-          height: 20,
-          fill: '#172CAF',
-          stroke: 'black',
-          strokeWidth: 2,
-		  opacity: 0.7
-        });
-		characterLayer.add(rect);
-		characterLayer.draw();
-		hudLayer.moveToTop();
-		textLayer.moveToTop();	
-}
-
-
-
 //collision variables
 //object1
 var a_X1;
@@ -1109,7 +1088,7 @@ function setScoreText(posX, posY, size, text){
           shadow: {
             color: 'black',
             blur: 1,
-            offset: [10, 10],
+            offset: [5, 5],
             opacity: 0
           },
           opacity: 1.0,
@@ -1136,7 +1115,7 @@ function setHText(posX, posY, size, text){
           shadow: {
             color: 'black',
             blur: 1,
-            offset: [10, 10],
+            offset: [5, 5],
             opacity: 0
           },
           opacity: 1.0,
@@ -1164,7 +1143,7 @@ function setSText(posX, posY, size, text){
           shadow: {
             color: 'black',
             blur: 1,
-            offset: [10, 10],
+            offset: [5, 5],
             opacity: 0
           },
           opacity: 0.0,
@@ -1203,7 +1182,7 @@ m_MainText = new Kinetic.Text({
           shadow: {
             color: 'black',
             blur: 1,
-            offset: [10, 10],
+            offset: [5, 5],
             opacity: 0
           },
           cornerRadius: 20,

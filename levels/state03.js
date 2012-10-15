@@ -102,6 +102,22 @@ console.log("initializing State 03(Menu)");
 			
 		});
 		
+		m_ScoreText.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver Top Scores, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+		});
+		
+		m_ScoreText.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut Top Scores, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+		});
+		
 		textLayer.add(m_ScoreText);
 		m_ScoreText.transitionTo({
             opacity: 1,
@@ -127,6 +143,22 @@ console.log("initializing State 03(Menu)");
 			initState05();
 		});
 		
+		m_CreditsText.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver Credits, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+		});
+		
+		m_CreditsText.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut Credits, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+		});
+		
 		textLayer.add(m_CreditsText);
 		m_CreditsText.transitionTo({
             opacity: 1,
@@ -142,6 +174,31 @@ console.log("initializing State 03(Menu)");
           textFill: 'black',
 		  opacity: 0,
         });
+		
+		m_ExitText.on('mouseup tap',function(){
+			if(debug == 1)
+			{
+			console.log("Clicked Exit, Go to Credits(State05)");	
+			}
+			stage.reset();
+			initState01();
+		});
+		
+		m_ExitText.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver Exit, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+		});
+		
+		m_ExitText.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut Exit, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+		});
 		
 		textLayer.add(m_ExitText);
 		stage.add(textLayer);
