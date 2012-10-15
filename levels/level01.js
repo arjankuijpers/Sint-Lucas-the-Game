@@ -12,7 +12,7 @@ function initLevel01(){
 log("Start Level01");
 	
 	var he1 = new Image();
-	he1.src = "assets/he1.png";
+	he1.src = "assets/he1^.png";
 	
 	var he2 = new Image();
 	he2.src = "assets/he2.png";
@@ -40,7 +40,7 @@ log("Start Level01");
 			image: he2,
 		});
 	
-		hudLayer.add(hudElement2);
+	//	hudLayer.add(hudElement2);
 		hudLayer.draw();
 		
 	}
