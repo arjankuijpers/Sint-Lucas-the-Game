@@ -385,7 +385,7 @@ function drawRoamText(dir, state, text)
 		
 		case 2:
 		log("Roam.JS - R386 :: Case 2 use in switch State^^ text :" + text);
-		color  = "#C61305";
+		color  = "#A9F608";
 		text += " - Op Slot";
 		break;
 		
@@ -426,7 +426,7 @@ function drawRoamText(dir, state, text)
 		textLayer.add(northText);
 		textLayer.draw();
 		northText.transitionTo({
-            opacity: 1,
+            opacity: 0.7,
             duration: 2,
 		});
 		break;
@@ -448,7 +448,7 @@ function drawRoamText(dir, state, text)
 		textLayer.add(southText);
 		textLayer.draw();
 		southText.transitionTo({
-            opacity: 1,
+            opacity: 0.7,
             duration: 2,
 		});
 		break;
@@ -470,7 +470,7 @@ function drawRoamText(dir, state, text)
 		textLayer.add(westText);
 		textLayer.draw();
 		westText.transitionTo({
-            opacity: 1,
+            opacity: 0.7,
             duration: 2,
 		});
 		
@@ -492,7 +492,7 @@ function drawRoamText(dir, state, text)
 		textLayer.add(eastText);
 		textLayer.draw();
 		eastText.transitionTo({
-            opacity: 1,
+            opacity: 0.7,
             duration: 2,
 		});
 		
