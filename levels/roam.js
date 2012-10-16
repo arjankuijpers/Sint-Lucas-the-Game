@@ -131,7 +131,7 @@ function setRoamLocation(loc){
 		east.hide();
 		west.hide();
 		
-		drawRoamText(1, "Ga naar binnen.");
+		drawRoamText(1,0, "Ga naar binnen.");
 		
 						
 			north.on('mouseup',function(){
@@ -177,11 +177,10 @@ function setRoamLocation(loc){
 		east.show();
 		
 		
-		drawRoamText(2, "Terug naar Buiten.");
-		drawRoamText(3,"Ga naar de Aula");
-		drawRoamText(4, "Naar de G vleugel + GymZaal");
-		
-		//north.off('mouseup');
+		drawRoamText(2,0, "Terug naar Buiten.");
+		drawRoamText(3,0,"Ga naar de Aula");
+		drawRoamText(4,2, "Naar de GymZaal Level03 (" + progress[3] + "%)");
+	
 		
 		
 		
@@ -192,26 +191,7 @@ function setRoamLocation(loc){
 					console.log("MouseUp south, go to r01");	
 				}
 				setRoamLocation(10);
-				/* 
 				
-				setTimeout(function()
-				{
-					roamImg.src = "assets/roaming/r02/02.png";
-		 		},1000);
-				setTimeout(function()
-				{
-					roamImg.src = "assets/roaming/r02/03.png";
-		 		},2000);
-				setTimeout(function(
-				){
-					roamImg.src = "assets/roaming/r02/04.png";
-		 		},3000);
-				setTimeout(function()
-				{
-				setRoamLocation(10);
-		 		},4000);
-				
-				*/
 		});
 		
 		west.on('mouseup',function(){
@@ -219,16 +199,18 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp west, go to r03");	
 				}
-				
-				
-				setTimeout(function()
-				{
-					roamImg.src = "assets/roaming/r03/02.png";
-		 		},1000);
-				setTimeout(function()
-				{
 					setRoamLocation(30);
-		 		},2000);				
+		 						
+				
+		});
+		east.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp east, go to Level03");	
+				}
+					stage.reset();
+					initLevel03();
+		 						
 				
 		});
 		
@@ -244,10 +226,10 @@ function setRoamLocation(loc){
 		west.show();
 		east.show();
 		
-		drawRoamText(1, "Level 01 - Aula");
-		drawRoamText(2, "terug naar Ingang.");
-		drawRoamText(3,"G Vleugel");
-		drawRoamText(4, "Naar de B vleugel");
+		drawRoamText(1,1, "Level 01 - Aula");
+		drawRoamText(2,0, "terug naar Ingang.");
+		drawRoamText(3,0,"G Vleugel");
+		drawRoamText(4,0, "Naar de B vleugel");
 		
 		//north.off('mouseup');
 		
@@ -277,6 +259,14 @@ function setRoamLocation(loc){
 				setRoamLocation(40);
 		});
 		
+		east.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp west, go to r05");	
+				}
+				setRoamLocation(50);
+		});
+		
 		
 		
 		break;
@@ -286,38 +276,21 @@ function setRoamLocation(loc){
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
 		roamImg.src = "assets/roaming/r04/01.png";
 		
-		north.show();
+		north.hide();
 		
 		south.show();
 		east.hide();
-		west.hide();
+		west.show();
 		
-		drawRoamText(1, "Level 02 - G Lokaal. (" + progress[2] + "%)");
-		drawRoamText(2, "Ga naar de hal");
+		drawRoamText(2,0, "Ga naar de begane grond");
+		drawRoamText(3,1, "Level 02 - G Lokaal. (" + progress[2] + "%)");
 		
-						
-			north.on('mouseup',function(){
-			if(debug == 1)
-				{
-					console.log("MouseUp north, go to r03");	
-				}
-				
-					north.hide();
-					south.hide();
-					east.hide();
-					west.hide();
-					textLayer.removeChildren();
-				
-					stage.reset();
-					initLevel02();
-					
-			
-		});
+		
 		
 		south.on('mouseup',function(){
 			if(debug == 1)
 				{
-					console.log("MouseUp north, go to r02");	
+					console.log("MouseUp north, go to r04");	
 				}
 				
 					north.hide();
@@ -329,10 +302,65 @@ function setRoamLocation(loc){
 					setRoamLocation(30);
 			
 		});
+		
+		west.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp west, go to level02");	
+				}
+				
+					north.hide();
+					south.hide();
+					east.hide();
+					west.hide();
+					textLayer.removeChildren();
+				
+					stage.reset();
+					initLevel02();
+			
+		});
 		break;
 		
-		case 5:
+		
+		
+		case 50:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
+		roamImg.src = "assets/roaming/r05/01.png";
+		north.hide();
+		south.show();
+		west.show();
+		east.hide();
+		
+		
+		
+		drawRoamText(2,0, "Ga naar de Aula");
+		drawRoamText(3,2, "Naar Level 04 (" + progress[4] + "%)");
+		
+	
+		
+		
+		
+		
+		south.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp south, go to r03");	
+				}
+				setRoamLocation(30);
+				
+		});
+		
+		west.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp west, go to Level 04");	
+				}
+				
+				stage.reset();
+				initLevel04();
+		});
+		
+		
 		break;
 		default:
 		log("ERROR: Switch loc got loc int outside Range ERROR ::roam.js:: R148");
@@ -343,9 +371,41 @@ var northText;
 var southText;
 var westText;
 var eastText;
-function drawRoamText(dir, text)
+function drawRoamText(dir, state, text)
 	{
 		log("roam.js - Draw Roam Text:: dir: " + dir);
+		var color;
+		switch(state)
+		{
+		case 1:
+		log("Roam.JS - R381 :: Case 1 use in switch State^^ text :" + text);
+		color  = "#049F04";
+		text += " - Open";
+		break;
+		
+		case 2:
+		log("Roam.JS - R386 :: Case 2 use in switch State^^ text :" + text);
+		color  = "#C61305";
+		text += " - Op Slot";
+		break;
+		
+		case 3:
+		log("Roam.JS - R392 :: Case 3 use in switch State^^ text :" + text);
+		color  = "#0A537E";
+		text += " - Gespeeld";
+		break;
+		
+		case 4:
+		log("Roam.JS - R398 :: Case 4 use in switch State^^ text :" + text);
+		color  = "#C61305";
+		text += " - Niet behaald, probeer opnieuw";
+		break;
+		
+		default:
+		log("Roam.JS - R404 :: Default use in switch State^^ text :" + text);
+		color = 'white';
+		}
+		
 		
 	switch(dir)
 		{
@@ -357,7 +417,7 @@ function drawRoamText(dir, text)
           text: text,
           fontSize:  12,
           fontFamily: 'Calibri',
-          textFill: 'White',
+          textFill: color,
           align: 'center',
           shadow: {
             color: 'black',
@@ -383,7 +443,7 @@ function drawRoamText(dir, text)
           text: text,
           fontSize:  12,
           fontFamily: 'Calibri',
-          textFill: 'White',
+          textFill: color,
           align: 'center',
           shadow: {
             color: 'black',
@@ -409,7 +469,7 @@ function drawRoamText(dir, text)
           text: text,
           fontSize:  12,
           fontFamily: 'Calibri',
-          textFill: 'White',
+          textFill: color,
           align: 'center',
           shadow: {
             color: 'black',
@@ -436,7 +496,7 @@ function drawRoamText(dir, text)
           text: text,
           fontSize:  12,
           fontFamily: 'Calibri',
-          textFill: 'White',
+          textFill: color,
           align: 'center',
           shadow: {
             color: 'black',
