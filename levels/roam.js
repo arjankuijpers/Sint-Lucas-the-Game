@@ -113,6 +113,7 @@ console.log("Done Loading, Roam");
 	}
 
 function setRoamLocation(loc){
+	delArrowEvents();
 	textLayer.removeChildren();
 	log("roam.js - textLayer Remove Children.");
 	
@@ -139,6 +140,12 @@ function setRoamLocation(loc){
 					console.log("MouseUp north, go to r02");	
 				}
 				
+					north.hide();
+					south.hide();
+					east.hide();
+					west.hide();
+					textLayer.removeChildren();
+				
 				setTimeout(function()
 				{
 					roamImg.src = "assets/roaming/r01/02.png";
@@ -158,10 +165,6 @@ function setRoamLocation(loc){
 			
 			
 		});
-		
-		break;
-		
-		case 15:
 		
 		break;
 		
@@ -211,11 +214,77 @@ function setRoamLocation(loc){
 				*/
 		});
 		
+		west.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp west, go to r03");	
+				}
+				
+				
+				setTimeout(function()
+				{
+					roamImg.src = "assets/roaming/r03/02.png";
+		 		},1000);
+				setTimeout(function()
+				{
+					setRoamLocation(30);
+		 		},2000);				
+				
+		});
+		
 		
 		
 		break;
-		case 4:
+		
+		case 30:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
+		roamImg.src = "assets/roaming/r03/01.png";
+		north.show();
+		south.show();
+		west.show();
+		east.show();
+		
+		drawRoamText(1, "Level 01 - Aula");
+		drawRoamText(2, "terug naar Ingang.");
+		drawRoamText(3,"G Vleugel");
+		drawRoamText(4, "Naar de B vleugel");
+		
+		//north.off('mouseup');
+		
+		
+		north.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp north, go to r01");	
+				}
+				stage.reset();
+				initLevel01();
+		});
+		
+		south.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp south, go to r02");	
+				}
+				setRoamLocation(20);
+		});
+		
+		west.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp west, go to r04");	
+				}
+				setRoamLocation(40);
+		});
+		
+		
+		
+		break;
+		
+		
+		case 40:
+		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
+		alert("Case 40");
 		break;
 		case 5:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
@@ -413,4 +482,12 @@ function addArrowEvents(){
 			document.body.style.cursor = 'default';
 		});
 	
+}
+
+function delArrowEvents(){
+	north.off('mouseup');
+	south.off('mouseup');
+	west.off('mouseup');
+	east.off('mouseup');
+		
 }
