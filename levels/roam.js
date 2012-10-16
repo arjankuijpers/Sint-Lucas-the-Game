@@ -1,4 +1,4 @@
-//Start roam
+//Start roaming
 
 function initRoam(location){
 	if(debug == 1)

@@ -77,7 +77,7 @@ console.log("Start Text Messages");
 }
 	
 		//function declared in Engine under Chapter 'Text'	
-		setText(50,250,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op Continue om overteslaan.\n Veel Plezier Namens Createc.');
+		setText(150,350,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op Continue om overteslaan.\n Veel Plezier Namens Createc.');
 		if(debug ==1)
 		console.log("Text 'one' has been drawn");
 		

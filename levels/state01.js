@@ -129,8 +129,8 @@ dragAble = new Kinetic.Image(
 		
 		dragAble.transitionTo({
             opacity: 1,
-			x: 150,
-            duration: 2,
+			x: 125,
+            duration: 1,
 		});
 }
 

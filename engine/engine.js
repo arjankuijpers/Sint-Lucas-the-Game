@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05063 ,QJS integrated"
+var version = "Game v05064 ,QJS integrated"
 
 var debug = 1;
 
@@ -835,20 +835,20 @@ function setGText(posX, posY, text, color){
 	s_GoodText = new Kinetic.Text({
         	  x: posX,
        	 	  y: posY,
-        	  stroke:'black',
+        	  stroke:'white',
           	strokeWidth: 5,
           	fill: color,
           	text: text,
           	fontSize: 14,
           	fontFamily: 'Calibri',
-          	textFill: '#555',
+          	textFill: 'white',
           	width: 950,
           	padding: 20,
           	align: 'center',
           	shadow: {
             color: 'black',
             blur: 1,
-            offset: [10, 10],
+            offset: [5, 5],
             opacity: 0
           },
           cornerRadius: 20,
