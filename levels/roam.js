@@ -226,7 +226,7 @@ function setRoamLocation(loc){
 		west.show();
 		east.show();
 		
-		drawRoamText(1,1, "Level 01 - Aula");
+		drawRoamText(1,1, "Naar de aula Level01 (" + progress[1] + "%)");
 		drawRoamText(2,0, "terug naar Ingang.");
 		drawRoamText(3,0,"G Vleugel");
 		drawRoamText(4,0, "Naar de B vleugel");
@@ -379,13 +379,13 @@ function drawRoamText(dir, state, text)
 		{
 		case 1:
 		log("Roam.JS - R381 :: Case 1 use in switch State^^ text :" + text);
-		color  = "#049F04";
+		color  = "#A9F608";
 		text += " - Open";
 		break;
 		
 		case 2:
 		log("Roam.JS - R386 :: Case 2 use in switch State^^ text :" + text);
-		color  = "#A9F608";
+		color  = "#FF0000";
 		text += " - Op Slot";
 		break;
 		
@@ -415,8 +415,9 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /2 -15,
 		  y: stage.getHeight() /4 +15,
           text: text,
+		  padding: 2,
 		  fill: 'black',
-          fontSize:  12,
+          fontSize:  12,		  
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
@@ -437,6 +438,7 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /2 -50,
           y:  stage.getHeight() /4 * 3 -50,
           text: text,
+		  padding: 2,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
@@ -459,6 +461,7 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /4 ,
           y:  stage.getHeight() /2 +25,
           text: text,
+		  padding: 2,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
@@ -482,6 +485,7 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /4 * 3 -100,
           y:  stage.getHeight() /2 + 25,
           text: text,
+		  padding: 2,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
