@@ -415,19 +415,12 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /2 -15,
 		  y: stage.getHeight() /4 +15,
           text: text,
-		  stroke:'#ecede9',
-          strokeWidth: 1,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
-          shadow: {
-            color: 'black',
-            blur: 1,
-            offset: [5, 5],
-            opacity: 0
-          },
+          
           opacity: 0.0,
         });
 		textLayer.add(northText);
@@ -444,19 +437,12 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /2 -50,
           y:  stage.getHeight() /4 * 3 -50,
           text: text,
-		   stroke:'#ecede9',
-          strokeWidth: 1,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
-          shadow: {
-            color: 'black',
-            blur: 1,
-            offset: [5, 5],
-            opacity: 0
-          },
+          
           opacity: 0.0,
         });
 		textLayer.add(southText);
@@ -473,19 +459,12 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /4 ,
           y:  stage.getHeight() /2 +25,
           text: text,
-		   stroke:'#ecede9',
-          strokeWidth: 1,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
-          shadow: {
-            color: 'black',
-            blur: 1,
-            offset: [5, 5],
-            opacity: 0
-          },
+          
           opacity: 0.0,
         });
 		textLayer.add(westText);
@@ -503,19 +482,11 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /4 * 3 -100,
           y:  stage.getHeight() /2 + 25,
           text: text,
-		   stroke:'#ecede9',
-          strokeWidth: 1,
 		  fill: 'black',
           fontSize:  12,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
-          shadow: {
-            color: 'black',
-            blur: 1,
-            offset: [5, 5],
-            opacity: 0
-          },
           opacity: 0.0,
         });
 		textLayer.add(eastText);
