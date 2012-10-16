@@ -284,8 +284,53 @@ function setRoamLocation(loc){
 		
 		case 40:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
-		alert("Case 40");
+		roamImg.src = "assets/roaming/r04/01.png";
+		
+		north.show();
+		
+		south.show();
+		east.hide();
+		west.hide();
+		
+		drawRoamText(1, "Level 02 - G Lokaal. (" + progress[2] + "%)");
+		drawRoamText(2, "Ga naar de hal");
+		
+						
+			north.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp north, go to r03");	
+				}
+				
+					north.hide();
+					south.hide();
+					east.hide();
+					west.hide();
+					textLayer.removeChildren();
+				
+					stage.reset();
+					initLevel02();
+					
+			
+		});
+		
+		south.on('mouseup',function(){
+			if(debug == 1)
+				{
+					console.log("MouseUp north, go to r02");	
+				}
+				
+					north.hide();
+					south.hide();
+					east.hide();
+					west.hide();
+					textLayer.removeChildren();
+				
+					setRoamLocation(30);
+			
+		});
 		break;
+		
 		case 5:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
 		break;
