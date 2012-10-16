@@ -139,11 +139,12 @@ console.log("Start Text Messages");
 		setTimeout(function(){
 		stage.reset();
 		initState07();
+		
 		},25000);
 			}
 			else{
 				stage.reset();
-				initState07();
+				initRoam(10);
 			}
 		},10000);
 	
