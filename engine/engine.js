@@ -440,20 +440,40 @@ function showAnswer(good, qID){
 			setText(300,125,"Je hebt de vraag fout beantwoord. \n"
 			 + question_OS + "\n\n het juiste antwoord is: \n" + answerArray[answerGood -1]);
 			 
-			 var willemImg = new Image();
-	willemImg.src = "assets/willem.png";
+			 var leraarImg = new Image();
+			 switch(levelSave)
+			 {
+				 case 1:
+					leraarImg.src = "assets/leraren/willem_k.png";
+				break;
+				
+				case 2:
+					leraarImg.src = "assets/leraren/luc_k.png";
+				break;
+					
+				case 3:
+					leraarImg.src = "assets/leraren/rene_k.png";
+				break;
+				
+				case 4:
+					leraarImg.src = "assets/leraren/robin_k.png";
+				break;
+				
+				default:
+					error_Alert(10);
+			 }
 	
 	var continueImg = new Image();
 	continueImg.src = "assets/sc_con_k.png";
 			 
-			 willemImg.onload = function() {
-		var willem = new Kinetic.Image(
+			 leraarImg.onload = function() {
+		var leraar = new Kinetic.Image(
 		{
 			x: 700,
-			y: 125,
-			image: willemImg,
+			y: 75,
+			image: leraarImg,
 		});
-		characterLayer.add(willem);
+		characterLayer.add(leraar);
 		}
 		
 		 
@@ -667,13 +687,16 @@ case 2:
   break;
   
   case 8:
- 	 alert("An error has occurred: with id:" + id + "!!!!!Function Clear Level - returned an ERROR: switch level is out of range of switch >> CANT CLEAR LEVEL !!!!!");
+ 	 alert("An error has occurred: with id:" + id + "Function Clear Level - returned an ERROR: switch level is out of range of switch >>!!!!! CANT CLEAR LEVEL !!!!!");
   break;
  
   case 9:
  	 alert("An error has occurred: with id:" + id + "switch level answerArray: R217 engine.js");
   break;
   case 10:
+ 	 alert("An error has occurred: with id:" + id + " Switch leraar - returned an int outside range - R444 engine.js");
+  break;
+  case 11:
  	 alert("An error has occurred: with id:" + id + "");
   break;
 default:

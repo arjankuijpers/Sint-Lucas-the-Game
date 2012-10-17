@@ -18,7 +18,7 @@ log("Start Level03");
 	he2.src = "assets/he2.png";
 	
 	var mbg = new Image();
-	mbg.src = "assets/l01/01.png";
+	mbg.src = "assets/l03/01.png";
 	
 	he1.onload = function() {
 		var hudElement1 = new Kinetic.Image(
