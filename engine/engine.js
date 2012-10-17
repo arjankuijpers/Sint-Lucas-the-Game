@@ -36,7 +36,13 @@ var allQuestNumber = 0;
 
 var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
-var levelUnlock = new Array();
+var statusLevel = new Array();
+statusLevel[1] = 1;
+statusLevel[2] = 1;
+statusLevel[3] = 2;
+statusLevel[4] = 2;
+
+
 var goodQuestsL1 = new Array();
 var goodQuestsL2 = new Array();
 var goodQuestsL3 = new Array();
@@ -496,21 +502,69 @@ randomOut = Math.floor((high-(low-1))*Math.random()) + low;
 
 
 
-function unlockLevel(){
-log("check and unlock Levels - R496 - engine.JS");
-if(progress[1] >= 75 && progress[2] >= 75)
-{levelUnlock[3] = 1
-}
+function setStatusLevel(){
+log("check and set status Levels - R499 - engine.JS");
 
-if(progress[3] >= 75)
-{levelUnlock[4] = 1
-}
-if(progress[4] >= 75)
-{
-levelFinal = 1;	
-}
 
-}
+if(progress[1] >= 75)
+	{
+		statusLevel[1] = 3;
+	}
+if(progress[1] < 75 && progress[1] != 0)
+	{
+		statusLevel[1] = 4;
+	}
+
+
+
+	if(progress[2] >= 75)
+		{
+			statusLevel[2] = 3;
+		}
+	if(progress[2] < 75 && progress[2] != 0)
+		{
+			statusLevel[2] = 4;
+		}
+
+
+
+	if(progress[3] >= 75)
+		{
+			statusLevel[3] = 3;
+		}
+	if(progress[3] < 75 && progress[3] != 0)
+		{
+			statusLevel[3] = 4;
+		}
+		
+		
+		
+	if(progress[4] >= 75)
+		{
+			statusLevel[4] = 3;
+		}
+	if(progress[4] < 75 && progress[4] != 0)
+		{
+			statusLevel[4] = 4;
+		}
+		
+		
+	if(progress[1] >= 75 && progress[2] >= 75)
+		{
+			statusLevel[3] = 1
+		}
+
+
+		if(progress[3] >= 75)
+		{
+			statusLevel[4] = 1
+		}
+		if(progress[4] >= 75)
+		{
+			levelFinal = 1;	
+		}
+
+		}
 
 
 

@@ -2,7 +2,6 @@
 
 function initState07(){
 	
-	unlockLevel();
 		if(levelFinal == 1)
 			{
 				log("Set wallpaper");

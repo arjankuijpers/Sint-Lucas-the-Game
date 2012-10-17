@@ -113,66 +113,78 @@ console.log("Done Loading, Roam");
 	}
 
 function setRoamLocation(loc){
+	log("setRoamLocation(" + loc + ") Start");
+	
+	
+	
+	setStatusLevel();
+	
+	
+	log("check VAR roaming - start");
 	if(roaming == 0)
 					{
+						log("check VAR roaming = (" + roaming + ")");
 						askRoaming();
 					}
 					else if (roaming == 1)
 					{
-	delArrowEvents();
-	textLayer.removeChildren();
-	log("roam.js - textLayer Remove Children.");
+						log("check VAR roaming = (" + roaming + ")");
+							delArrowEvents();
+							textLayer.removeChildren();
+						log("roam.js - textLayer Remove Children.");
 	
-	addArrowEvents();	
+							addArrowEvents();	
 	
-		switch(loc)
-		{
-			case 10:
-		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
-		roamImg.src = "assets/roaming/r01/01.png";
+						switch(loc)
+							{
+								case 10:
+									log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
+										roamImg.src = "assets/roaming/r01/01.png";
 		
-		north.show();
+											north.show();
+											south.hide();
+											east.hide();
+											west.hide();
 		
-		south.hide();
-		east.hide();
-		west.hide();
-		
-		drawRoamText(1,0, "Ga naar binnen.");
+										drawRoamText(1,0, "Ga naar binnen.");
 		
 						
-			north.on('mouseup',function(){
-			if(debug == 1)
-				{
-					console.log("MouseUp north, go to r02");	
-				}
-					textLayer.removeChildren();
+											north.on('mouseup',function()
+											{
+												if(debug == 1)
+													{
+														console.log("MouseUp north, go to r02");	
+													}
+													
+														textLayer.removeChildren();
+														textLayer.draw();
 				
 				
-					north.hide();
-					south.hide();
-					east.hide();
-					west.hide();
+														north.hide();
+														south.hide();
+														east.hide();
+														west.hide();
 					
 				
-				setTimeout(function()
-				{
-					roamImg.src = "assets/roaming/r01/02.png";
-		 		},1000);
-				setTimeout(function()
-				{
-					roamImg.src = "assets/roaming/r01/03.png";
-		 		},2500);
-				setTimeout(function(
-				){
-					roamImg.src = "assets/roaming/r01/04.png";
-		 		},4000);
-				setTimeout(function()
-				{
-					setRoamLocation(20);
-				},5000);
-				});
+												setTimeout(function()
+													{
+														roamImg.src = "assets/roaming/r01/02.png";
+											 		},1000);
+												setTimeout(function()
+													{
+														roamImg.src = "assets/roaming/r01/03.png";
+											 		},2500);
+												setTimeout(function()
+													{
+														roamImg.src = "assets/roaming/r01/04.png";
+		 											},4000);
+												setTimeout(function()
+													{
+														setRoamLocation(20);
+													},5000);
+											});
 		
-			break;
+									break;
 		
 		
 		
@@ -188,13 +200,10 @@ function setRoamLocation(loc){
 		drawRoamText(2,0, "Terug naar Buiten.");
 		drawRoamText(3,0,"Ga naar de Aula");
 		
-		if(levelUnlock[3] != 1)
-		{
-		drawRoamText(4,2, "Naar de GymZaal Level03 (" + progress[3] + "%)");
-		}
-		else if(levelUnlock[3] == 1){
-		drawRoamText(4,1, "Naar de GymZaal Level03 (" + progress[3] + "%)");
-		}
+		
+		drawRoamText(4,statusLevel[3], "Naar de GymZaal Level03 (" + progress[3] + "%)");
+		
+
 		
 		
 		
@@ -222,8 +231,17 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp east, go to Level03");	
 				}
-					stage.reset();
-					initLevel03();
+				
+				if(levelUnlock[3] != 1)
+					{
+		
+					}
+				else if(levelUnlock[3] == 1){
+						stage.reset();
+						initLevel03();
+					}
+				
+					
 		 						
 				
 		});
@@ -240,7 +258,7 @@ function setRoamLocation(loc){
 		west.show();
 		east.show();
 		
-		drawRoamText(1,1, "Naar de aula Level01 (" + progress[1] + "%)");
+		drawRoamText(1,statusLevel[1], "Naar de aula Level01 (" + progress[1] + "%)");
 		drawRoamText(2,0, "terug naar Ingang.");
 		drawRoamText(3,0,"G Vleugel");
 		drawRoamText(4,0, "Naar de B vleugel");
@@ -297,7 +315,7 @@ function setRoamLocation(loc){
 		west.show();
 		
 		drawRoamText(2,0, "Ga naar de begane grond");
-		drawRoamText(3,1, "Level 02 - G Lokaal. (" + progress[2] + "%)");
+		drawRoamText(3,statusLevel[2], "Level 02 - G Lokaal. (" + progress[2] + "%)");
 		
 		
 		
@@ -348,7 +366,8 @@ function setRoamLocation(loc){
 		
 		
 		drawRoamText(2,0, "Ga naar de Aula");
-		drawRoamText(3,2, "Naar Level 04 (" + progress[4] + "%)");
+
+		drawRoamText(3,statusLevel[4], "Naar Level 04 (" + progress[4] + "%)");
 		
 	
 		
@@ -369,9 +388,15 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp west, go to Level 04");	
 				}
+					if(levelUnlock[3] != 1)
+						{
+		
+						}
+					else if(levelUnlock[3] == 1){
+							stage.reset();
+							initLevel04();
+						}
 				
-				stage.reset();
-				initLevel04();
 		});
 		
 		
@@ -381,9 +406,11 @@ function setRoamLocation(loc){
 		}
 		}
 					else{
+						log("check VAR roaming = (" + roaming + ")");
 						stage.reset();
 						initState07();
 					}
+					log("check VAR roaming is complete");
 	
 }
 var northText;
@@ -410,13 +437,13 @@ function drawRoamText(dir, state, text)
 		
 		case 3:
 		log("Roam.JS - R392 :: Case 3 use in switch State^^ text :" + text);
-		color  = "#0A537E";
+		color  = "#3FF6FF";
 		text += " - Gespeeld";
 		break;
 		
 		case 4:
 		log("Roam.JS - R398 :: Case 4 use in switch State^^ text :" + text);
-		color  = "#C61305";
+		color  = "#FFCB3E";
 		text += " - Niet behaald, probeer opnieuw";
 		break;
 		
@@ -533,6 +560,8 @@ function drawRoamText(dir, state, text)
 	}
 
 function addArrowEvents(){
+	log("Function addArrowEvents Started");
+	
 	north.on('mouseover',function(){
 			if(debug == 1)
 			{
@@ -592,44 +621,48 @@ function addArrowEvents(){
 			}
 			document.body.style.cursor = 'default';
 		});
-	
+	log("Function addArrowEvents Ended");
 }
 
 function delArrowEvents(){
+	log("Function delete ArrowEvents Started");
 	north.off('mouseup');
 	south.off('mouseup');
 	west.off('mouseup');
 	east.off('mouseup');
+	log("Function delete ArrowEvents ended");
 		
 }
 
-function askRoaming()
-{
-textLayer.removeChildren();
+	function askRoaming()
+		{
+			log("Function askRoaming Started");
+			textLayer.removeChildren();
+			textLayer.draw();
 
-var textAsk = "Vrij rondlopen of via een map ?";
-var textq1 = "Vrij rondlopen";
-var textq2 = "Gebruik een map";
+			var textAsk = "Vrij rondlopen of via een map ?";
+			var textq1 = "Vrij rondlopen";
+			var textq2 = "Gebruik een map";
 
 
-askText = new Kinetic.Text({
-          x: stage.getWidth() /4 -100,
-          y:  stage.getHeight() /4,
-          text: textAsk,
-		  padding: 15,
-		  stroke:'#ecede9',
-          strokeWidth: 5,
-          fill: {
-            start: {
-              x: 0,
-              y: 0
-            },
-            end: {
-              x: 200,
-              y: 200
-            },
-            colorStops: [0, '#4F2009', 1, 'black']
-          },
+			askText = new Kinetic.Text({
+       		   	x: stage.getWidth() /4 -100,
+        	    y:  stage.getHeight() /4,
+          	   	text: textAsk,
+		  	    padding: 15,
+		  		stroke:'#ecede9',
+          		strokeWidth: 5,
+          		fill: {
+            		start: 	{
+              			x: 0,
+              			y: 0
+            				},
+            		end: 	{
+              			x: 200,
+              			y: 200
+            				},
+            		colorStops: [0, '#4F2009', 1, 'black']
+          			  },
           fontSize:  35,
           fontFamily: 'Calibri',
           textFill: 'White',
@@ -777,5 +810,5 @@ askText = new Kinetic.Text({
             duration: 2,
 		});
 		
-	
+	log("Function askRoaming Ended R 815");
 }
