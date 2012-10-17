@@ -32,7 +32,6 @@ var allGood = 0;
 
 var inLevel = 0;
 var questNumber = 0;
-var allQuestNumber = 0;
 
 var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
@@ -278,7 +277,6 @@ answer4 = answerArray[3];
 answerGood = answerArray[4];
 
 		questNumber++;
-		allQuestNumber++;
 		setHText(100,0,15, 'Level: ' + levelSave);
 		setHText(225,0,15,"Vraag: " + questNumber + "/" + inLevel);
 		setScoreText(125,465,30,String(score));
