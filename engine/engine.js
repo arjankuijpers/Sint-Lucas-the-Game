@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05069 ,QJS integrated"
+var version = "Game v05070 ,QJS integrated"
 
 var debug = 1;
 
@@ -13,7 +13,11 @@ var difficultySave;
 var roaming = 0;
 
 var timeCount = 0;
-var score = 0;
+var score = new Array();
+score[1] = 0;
+score[2] = 0;
+score[3] = 0;
+score[4] = 0;
 
 var allProgress = 0;
 var progress = new Array();
@@ -54,14 +58,14 @@ function setQuest(level, difficulty){
 	levelSave = level;
 	difficultySave = difficulty;
 	
-	allProgress = progress[1] + progress[2] + progress[3] + progress[4] /4;
+	allProgress = (progress[1] + progress[2] + progress[3] + progress[4]) /4;
 	progress[levelSave] = goodInLevel[levelSave] / 5 * 100;
 	log("progress " + progress + "%");
 	
 	if(inLevel == questNumber && questNumber != 0)
 	{
 		log("inLevel == questNumber" + inLevel + "--" + questNumber);
-		log("Level 1 Finished with time, and Score");
+		log("Level 1 Finished");
 		log("setQuest Stage Reset and Int next Level");
 		stage.reset();
 		clear_Memory();
@@ -279,7 +283,7 @@ answerGood = answerArray[4];
 		questNumber++;
 		setHText(100,0,15, 'Level: ' + levelSave);
 		setHText(225,0,15,"Vraag: " + questNumber + "/" + inLevel);
-		setScoreText(125,465,30,String(score));
+		setScoreText(125,465,30,String(score[levelSave]));
 		setHText(200,470,20," Score");
 		setHText(450,470,20, progress[levelSave] + "%");
 
@@ -332,7 +336,7 @@ function checkAnswer(chosen){
 			default:
 		log("ERROR: Switch GoodQuest got LevelSave int outside Range ERROR - R260");
 		}
-		score += 10;
+		score[levelSave] += 10;
 		
 		showAnswer(1,qid);
 		
@@ -366,7 +370,7 @@ function checkAnswer(chosen){
 		log("ERROR: Switch GoodQuest got LevelSave int outside Range ERROR R293");
 		}
 		console.log("inLevel" + inLevel);	
-		console.log("Score:" + score);
+		console.log("Score:" + score[levelSave]);
 		}
 		
 		
@@ -376,7 +380,7 @@ function checkAnswer(chosen){
 		{
 		console.log("Answer is False: " + chosen + ":-:" + answerGood);
 		}
-			score -= 5;
+			score[levelSave] -= 5;
 			
 			showAnswer(0,qid);
 	}
@@ -427,7 +431,7 @@ function showAnswer(good, qID){
 				}
 			
 			setTimeout(function(){
-			setScoreText(125,437,40,String(score));
+			setScoreText(125,437,40,String(score[levelSave]));
 			setHText(200,450,20," Score");
 			
 			textLayer.removeChildren();
@@ -523,6 +527,23 @@ if(progress[1] < 75 && progress[1] != 0)
 		{
 			statusLevel[2] = 4;
 		}
+		
+		
+		
+		if(progress[1] >= 75 && progress[2] >= 75)
+		{
+			statusLevel[3] = 1
+		}
+
+
+		if(progress[3] >= 75)
+		{
+			statusLevel[4] = 1
+		}
+		if(progress[4] >= 75)
+		{
+			levelFinal = 1;	
+		}
 
 
 
@@ -545,22 +566,6 @@ if(progress[1] < 75 && progress[1] != 0)
 		{
 			statusLevel[4] = 4;
 		}
-		
-		
-	if(progress[1] >= 75 && progress[2] >= 75)
-		{
-			statusLevel[3] = 1
-		}
-
-
-		if(progress[3] >= 75)
-		{
-			statusLevel[4] = 1
-		}
-		if(progress[4] >= 75)
-		{
-			levelFinal = 1;	
-		}
 
 		}
 
@@ -572,19 +577,27 @@ function clear_Level(level){
 	{
 		case 1:
 		log("goodQuestL1 is set to 0");
-	goodQuestsL1 = 0;
+			goodQuestsL1 = 0;
+			score[1] = 0;
+		log("Score: " + score[1]); 	
 		break;
 		case 2:
 		log("goodQuestL2 is set to 0"); 
-	goodQuestsL2 = 0;
+			goodQuestsL2 = 0;
+			score[2] = 0;
+		log("Score: " + score[2]); 	
 		break;
 		case 3:
 		log("goodQuestL3 is set to 0"); 
-	goodQuestsL3 = 0;
+			goodQuestsL3 = 0;
+			score[3] = 0;
+		log("Score: " + score[3]); 	
 		break;
 		case 4:
 		log("goodQuestL4 is set to 0"); 
-	goodQuestsL4 = 0;
+			goodQuestsL4 = 0;
+			score[4] = 0;
+		log("Score: " + score[4]); 	
 		break;
 		default:
 		error_Alert(8);

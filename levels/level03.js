@@ -63,14 +63,7 @@ log("Start Level03");
 		log("Set Hud Stats");
 
 		log("set Text levelHUD - R145 engine.js");
-		log("set Text questionHUD - R146 engine.js");
-		
-		log("Set Score Text:: R69 - level03.js");
-		setScoreText(125,465,30,String(score));
-		setHText(200,470,20," Score");
-		
-		log("Done Setting Hud Stats");
-		
+		log("set Text questionHUD - R146 engine.js");	
 		
 		log("Set Quests");	
 		log("levelSave:" + levelSave);

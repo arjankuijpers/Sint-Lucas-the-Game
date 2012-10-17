@@ -239,10 +239,11 @@ function setRoamLocation(loc){
 					}
 					else if(statusLevel[3] == 3)
 					{
-					askContinue(1);	
+					askContinue(3);	
 					}
 					else if(statusLevel[3] == 4)
 					{
+						clear_Level(3);
 						stage.reset();
 						initLevel03();
 					}
@@ -288,9 +289,9 @@ function setRoamLocation(loc){
 					}
 					else if(statusLevel[1] == 4)
 					{
-						clear_Level(1)
+						clear_Level(1);
 						stage.reset();
-						initLevel03();
+						initLevel01();
 					}
 		});
 		
@@ -366,8 +367,21 @@ function setRoamLocation(loc){
 					west.hide();
 					textLayer.removeChildren();
 				
-					stage.reset();
-					initLevel02();
+					if(statusLevel[2] == 1)
+					{
+						stage.reset();
+						initLevel02();
+					}
+					else if(statusLevel[2] == 3)
+					{
+					askContinue(2);	
+					}
+					else if(statusLevel[2] == 4)
+					{
+						clear_Level(2)
+						stage.reset();
+						initLevel02();
+					}
 			
 		});
 		break;
@@ -407,14 +421,21 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp west, go to Level 04");	
 				}
-					if(levelUnlock[3] != 1)
-						{
-		
-						}
-					else if(levelUnlock[3] == 1){
-							stage.reset();
-							initLevel04();
-						}
+					if(statusLevel[4] == 1)
+					{
+						stage.reset();
+						initLevel04();
+					}
+					else if(statusLevel[4] == 3)
+					{
+					askContinue(4);	
+					}
+					else if(statusLevel[4] == 4)
+					{
+						clear_Level(4)
+						stage.reset();
+						initLevel04();
+					}
 				
 		});
 		
@@ -850,7 +871,7 @@ function askContinue(id)
 			textLayer.removeChildren();
 			textLayer.draw();
 
-			var textAsk = "je verliest de voortgang voor dit level ?";
+			var textAsk = "je verliest de voortgang voor dit level";
 			var textq1 = "Doorgaan";
 			var textq2 = "toch niet";
 			
@@ -949,7 +970,21 @@ function askContinue(id)
 			}
 			else if(id == 2)
 			{
-				
+				clear_Level(2)
+				stage.reset();
+				initLevel02();
+			}
+			else if(id == 3)
+			{
+				clear_Level(3)
+				stage.reset();
+				initLevel03();
+			}
+			else if(id == 4)
+			{
+				clear_Level(4)
+				stage.reset();
+				initLevel04();
 			}
 		});
 		
@@ -985,7 +1020,7 @@ function askContinue(id)
 		
 		
 		q2Text = new Kinetic.Text({
-          x: stage.getWidth() /4 * 3 -200,
+          x: stage.getWidth() /4 * 3,
           y:  stage.getHeight() /4 * 3 -150,
           text: textq2,
 		  padding: 15,

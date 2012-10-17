@@ -52,7 +52,7 @@ console.log("Start State Level01 FINISHED");
 		
 		setSText(275,20,45, 'Level 1 Finished');
 		setSText(275,120,20, '=================');
-		setSText(275,170,20, 'Score: ' + score);
+		setSText(275,170,20, 'Score: ' + score[levelSave]);
 		setSText(275,220,20, 'Level Voortgang: ' + progress[levelSave] + "%");
 		setSText(275,250,20, '=================');
 		setSText(275,280,20, 'Algemene Voortgang: ' + allProgress + "%");

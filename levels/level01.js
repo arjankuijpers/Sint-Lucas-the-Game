@@ -65,16 +65,11 @@ log("Start Level01");
 		log("set Text levelHUD - R145 engine.js");
 		log("set Text questionHUD - R146 engine.js");
 		
-		log("Set Score Text:: R69 - level01.js");
-		setScoreText(125,465,30,String(score));
-		setHText(200,470,20," Score");
-		
-		log("Done Setting Hud Stats");
 		
 		
 		log("Set Quests");	
 		setQuest(1, 1);
-		
+		log("Done Setting Hud Stats");
 		try{
 		
 		characterLayer.moveToTop();
