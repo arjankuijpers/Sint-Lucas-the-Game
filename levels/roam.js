@@ -1058,7 +1058,15 @@ function askContinue(id)
 			}
 			else if(id == 2)
 			{
-				
+				setRoamLocation(40);
+			}
+						else if(id == 3)
+			{
+				setRoamLocation(20);
+			}
+						else if(id == 4)
+			{
+				setRoamLocation(50);
 			}
 		});
 		
