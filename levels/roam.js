@@ -94,15 +94,24 @@
 			opacity: 1,
 		});
 		
-		var aGroup = new Kinetic.Group();
-		aGroup.add(north);
-		aGroup.add(south);
-		aGroup.add(west);
-		aGroup.add(east);
+		if(levelFinal =! 1)
+			{
 		
-		characterLayer.add(aGroup);
-		log("loc: " + loc);
-		setRoamLocation(loc);
+				var aGroup = new Kinetic.Group();
+					aGroup.add(north);
+					aGroup.add(south);
+					aGroup.add(west);
+					aGroup.add(east);
+		
+				characterLayer.add(aGroup);
+				log("loc: " + loc);
+				setRoamLocation(loc);
+			}
+		else
+			{
+			  stage.reset();
+			  initFinal();
+			}
 		
 	}
 		

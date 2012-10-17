@@ -1,5 +1,5 @@
 //Start Level 05 (final) (boss)
-function initLevel05(){
+function initFinal(){
 	
 	
 	inLevel = 5;
@@ -9,41 +9,33 @@ function initLevel05(){
 			stage.add(characterLayer);
 			stage.add(textLayer);
 	
-log("Start Level05 (Final)");
-	
-	var he1 = new Image();
-	he1.src = "assets/he1.png";
-	
-	var he2 = new Image();
-	he2.src = "assets/he2.png";
+log("Start (Final)");
 	
 	var mbg = new Image();
-	mbg.src = "assets/l01/01.png";
+	mbg.src = "assets/final/bg.png";
+	var he = new Image();
+	he.src = "assets/he1.png";
 	
-	he1.onload = function() {
-		var hudElement1 = new Kinetic.Image(
+
+	
+	he.onload = function() {
+		var hudElement = new Kinetic.Image(
 		{
-			x: 0,
+			x: -950,
 			y: 0,
-			image: he1,
+			image: he,
 		});
 	
-		hudLayer.add(hudElement1);
-		hudLayer.draw();
-	}
-		
-		he2.onload = function() {
-		var hudElement2 = new Kinetic.Image(
-		{
-			x: 0,
-			y: 0,
-			image: he2,
-		});
-	
-	//	hudLayer.add(hudElement2);
-		hudLayer.draw();
-		
-	}
+			hudElement.transitionTo(
+				{
+					x: 0,
+            		opacity: 1,
+           			duration: 5,
+				});
+				
+			hudLayer.add(hudElement);
+			hudLayer.draw();
+		}
 	
 	mbg.onload = function() {		
 		var background = new Kinetic.Image(
@@ -58,7 +50,7 @@ log("Start Level05 (Final)");
 		backgroundLayer.draw();
 		
 		
-		log("Done Loading - Level05 /n Idle");
+		log("Done Loading - Final /n Idle");
 		
 		log("Set Hud Stats");
 
@@ -66,18 +58,11 @@ log("Start Level05 (Final)");
 		log("set Text questionHUD - R146 engine.js");
 		
 		log("Set Score Text:: R69 - level05.js");
-		setScoreText(125,465,30,String(score));
-		setHText(200,470,20," Score");
+		//setScoreText(125,465,30,String(score));
+		//setHText(200,470,20," Score");
 		
 		log("Done Setting Hud Stats");
 		
-		
-		log("Set Quests");	
-		log("levelSave:" + levelSave);
-		log("difficultySave: " + difficultySave)
-		setQuest(4, 1);
-		log(levelSave);
-		log(difficultySave)
 		
 		try{
 		
