@@ -89,7 +89,7 @@ console.log("Start State Level03 FINISHED");
 			console.log("Continue to level select");	
 			}
 				stage.reset();
-				initState07();
+				initRoam(20);
 		});
 		
 		textLayer.add(con);
