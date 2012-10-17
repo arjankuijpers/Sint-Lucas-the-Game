@@ -16,27 +16,6 @@ log("Start (Final)");
 	var he = new Image();
 	he.src = "assets/he1.png";
 	
-
-	
-	he.onload = function() {
-		var hudElement = new Kinetic.Image(
-		{
-			x: -950,
-			y: 0,
-			image: he,
-		});
-	
-			hudElement.transitionTo(
-				{
-					x: 0,
-            		opacity: 1,
-           			duration: 5,
-				});
-				
-			hudLayer.add(hudElement);
-			hudLayer.draw();
-		}
-	
 	mbg.onload = function() {		
 		var background = new Kinetic.Image(
 		{
@@ -48,7 +27,36 @@ log("Start (Final)");
 		
 		backgroundLayer.add(background);
 		backgroundLayer.draw();
+			
 		
+		he.onload = function() {
+		var hudElement = new Kinetic.Image(
+		{
+			x: 0,
+			y: 0,
+			image: he,
+			opacity: 0,
+			scale:  {
+   			 x: 1,
+			 y: 3
+            		},
+		});
+		
+			hudLayer.add(hudElement);
+			hudLayer.draw();
+	
+			hudElement.transitionTo(
+				{
+					scale:  {
+           			 x: 1,
+					 y: 1
+            				},
+            		opacity: 1,
+           			duration: 1,
+				});
+				
+			
+		}
 		
 		log("Done Loading - Final /n Idle");
 		
