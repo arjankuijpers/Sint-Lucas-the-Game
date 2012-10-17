@@ -113,6 +113,12 @@ console.log("Done Loading, Roam");
 	}
 
 function setRoamLocation(loc){
+	if(roaming == 0)
+					{
+						askRoaming();
+					}
+					else if (roaming == 1)
+					{
 	delArrowEvents();
 	textLayer.removeChildren();
 	log("roam.js - textLayer Remove Children.");
@@ -139,12 +145,14 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp north, go to r02");	
 				}
+					textLayer.removeChildren();
+				
 				
 					north.hide();
 					south.hide();
 					east.hide();
 					west.hide();
-					textLayer.removeChildren();
+					
 				
 				setTimeout(function()
 				{
@@ -160,24 +168,13 @@ function setRoamLocation(loc){
 		 		},4000);
 				setTimeout(function()
 				{
-					if(roaming == 0)
-					{
-						askRoaming();
-					}
-					else if (roaming == 1)
-					{
-				setRoamLocation(20);
-					}
-					else{
-						stage.reset();
-						initState07();
-					}
-		 		},5000);
-			
-			
-		});
+					setRoamLocation(20);
+				},5000);
+				});
 		
-		break;
+			break;
+		
+		
 		
 		case 20:
 		log("Roam.js - loc: " + loc + " - show and hide arrows, draw text & background");
@@ -382,6 +379,11 @@ function setRoamLocation(loc){
 		default:
 		log("ERROR: Switch loc got loc int outside Range ERROR ::roam.js:: R148");
 		}
+		}
+					else{
+						stage.reset();
+						initState07();
+					}
 	
 }
 var northText;
@@ -605,11 +607,13 @@ function askRoaming()
 {
 textLayer.removeChildren();
 
-var textAsk = "Vrij rondlopen of via map ?";
+var textAsk = "Vrij rondlopen of via een map ?";
+var textq1 = "Vrij rondlopen";
+var textq2 = "Gebruik een map";
 
 
 askText = new Kinetic.Text({
-          x: stage.getWidth() /4 -25,
+          x: stage.getWidth() /4 -100,
           y:  stage.getHeight() /4,
           text: textAsk,
 		  padding: 15,
@@ -631,12 +635,147 @@ askText = new Kinetic.Text({
           textFill: 'White',
           align: 'center',
           opacity: 0.0,
-        });
+        });	
+		
 		textLayer.add(askText);
 		textLayer.draw();
 		askText.transitionTo({
             opacity: 0.75,
             duration: 2,
 		});
+		
+		
+		
+		
+		
+		q1Text = new Kinetic.Text({
+          x: stage.getWidth() /4 -100,
+          y:  stage.getHeight() /4 * 3 - 150,
+          text: textq1,
+		  padding: 15,
+		  stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          fontSize:  25,
+          fontFamily: 'Calibri',
+          textFill: '#74FF00',
+          align: 'center',
+          opacity: 0.0,
+        });
+		
+		
+		q1Text.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Mouseup q1");	
+			}
+			
+			roaming = 1;
+			setRoamLocation(10);
+		});
+		
+		
+		
+		q1Text.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver q1, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+			q1Text.setTextFill("white");
+		});
+		
+		q1Text.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut q1, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+			q1Text.setTextFill("#74FF00");
+		});
+		
+		
+		textLayer.add(q1Text);
+		textLayer.draw();
+		q1Text.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		
+		
+		q2Text = new Kinetic.Text({
+          x: stage.getWidth() /4 * 3 -200,
+          y:  stage.getHeight() /4 * 3 -150,
+          text: textq2,
+		  padding: 15,
+		  stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          fontSize:  25,
+          fontFamily: 'Calibri',
+          textFill: '#FF3100',
+          align: 'center',
+          opacity: 0.0,
+        });
+		
+		
+		q2Text.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Mouseup q2");	
+			}
+			
+			roaming = 2;
+			setRoamLocation(10);
+		});
+		
+		
+		
+		q2Text.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver q2, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+			q2Text.setTextFill("white");
+		});
+		
+		q2Text.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut q2, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+			q2Text.setTextFill("#FF3100");
+		});
+		
+		
+		textLayer.add(q2Text);
+		textLayer.draw();
+		q2Text.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		
 	
 }
