@@ -160,7 +160,18 @@ function setRoamLocation(loc){
 		 		},4000);
 				setTimeout(function()
 				{
+					if(roaming == 0)
+					{
+						askRoaming();
+					}
+					else if (roaming == 1)
+					{
 				setRoamLocation(20);
+					}
+					else{
+						stage.reset();
+						initState07();
+					}
 		 		},5000);
 			
 			
@@ -179,8 +190,14 @@ function setRoamLocation(loc){
 		
 		drawRoamText(2,0, "Terug naar Buiten.");
 		drawRoamText(3,0,"Ga naar de Aula");
+		
+		if(levelUnlock[3] != 1)
+		{
 		drawRoamText(4,2, "Naar de GymZaal Level03 (" + progress[3] + "%)");
-	
+		}
+		else if(levelUnlock[3] == 1){
+		drawRoamText(4,1, "Naar de GymZaal Level03 (" + progress[3] + "%)");
+		}
 		
 		
 		
@@ -582,4 +599,44 @@ function delArrowEvents(){
 	west.off('mouseup');
 	east.off('mouseup');
 		
+}
+
+function askRoaming()
+{
+textLayer.removeChildren();
+
+var textAsk = "Vrij rondlopen of via map ?";
+
+
+askText = new Kinetic.Text({
+          x: stage.getWidth() /4 -25,
+          y:  stage.getHeight() /4,
+          text: textAsk,
+		  padding: 15,
+		  stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          fontSize:  35,
+          fontFamily: 'Calibri',
+          textFill: 'White',
+          align: 'center',
+          opacity: 0.0,
+        });
+		textLayer.add(askText);
+		textLayer.draw();
+		askText.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+	
 }

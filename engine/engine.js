@@ -10,6 +10,8 @@ var question_OS;
 var levelSave;
 var difficultySave;
 
+var roaming = 0;
+
 var timeCount = 0;
 var score = 0;
 
