@@ -22,12 +22,28 @@ log("Start (Final)");
 			x: 0,
 			y: 0,
 			image: mbg,
-			draggable: false
+			draggable: false,
+			scale:  {
+   			 x: 1,
+			 y: 3
+            		},
 		});
 		
-		backgroundLayer.add(background);
-		backgroundLayer.draw();
+				backgroundLayer.add(background);
+				backgroundLayer.draw();
+				
+				background.transitionTo(
+					{
+            			scale:
+					  		{
+   				 			x: 1,
+				 			y: 1
+            				},
+           				duration: 1,
+					});
+	
 			
+		
 		
 		he.onload = function() {
 		var hudElement = new Kinetic.Image(
