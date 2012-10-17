@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05068 ,QJS integrated"
+var version = "Game v05069 ,QJS integrated"
 
 var debug = 1;
 
@@ -55,7 +55,7 @@ function setQuest(level, difficulty){
 	levelSave = level;
 	difficultySave = difficulty;
 	
-	allProgress = allGood / 20 * 100;
+	allProgress = progress[1] + progress[2] + progress[3] + progress[4] /4;
 	progress[levelSave] = goodInLevel[levelSave] / 5 * 100;
 	log("progress " + progress + "%");
 	
@@ -566,6 +566,32 @@ if(progress[1] < 75 && progress[1] != 0)
 
 		}
 
+function clear_Level(level){
+	progress[level] = 0;
+	goodInLevel[level] = 0;
+	
+	switch(level)
+	{
+		case 1:
+		log("goodQuestL1 is set to 0");
+	goodQuestsL1 = 0;
+		break;
+		case 2:
+		log("goodQuestL2 is set to 0"); 
+	goodQuestsL2 = 0;
+		break;
+		case 3:
+		log("goodQuestL3 is set to 0"); 
+	goodQuestsL3 = 0;
+		break;
+		case 4:
+		log("goodQuestL4 is set to 0"); 
+	goodQuestsL4 = 0;
+		break;
+		default:
+		error_Alert(8);
+	}
+}
 
 
 function clear_Memory(){
@@ -630,11 +656,14 @@ case 2:
   break;
   
   case 8:
- 	 alert("An error has occurred: with id:" + id + "");
+ 	 alert("An error has occurred: with id:" + id + "!!!!!Function Clear Level - returned an ERROR: switch level is out of range of switch >> CANT CLEAR LEVEL !!!!!");
   break;
-  
+ 
   case 9:
  	 alert("An error has occurred: with id:" + id + "switch level answerArray: R217 engine.js");
+  break;
+  case 10:
+ 	 alert("An error has occurred: with id:" + id + "");
   break;
 default:
 	Console.log("An error has occurred: with id:" + id + "Unknown Error, error Alert Got Triggert with unkown id Int");

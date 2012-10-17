@@ -138,7 +138,7 @@ console.log("Start Text Messages");
 		
 		setTimeout(function(){
 		stage.reset();
-		initState07();
+		initRoam(10);
 		
 		},25000);
 			}

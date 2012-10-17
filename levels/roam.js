@@ -232,11 +232,17 @@ function setRoamLocation(loc){
 					console.log("MouseUp east, go to Level03");	
 				}
 				
-				if(levelUnlock[3] != 1)
+				if(statusLevel[3] == 1)
 					{
-		
+						stage.reset();
+						initLevel03();
 					}
-				else if(levelUnlock[3] == 1){
+					else if(statusLevel[3] == 3)
+					{
+					askContinue(1);	
+					}
+					else if(statusLevel[3] == 4)
+					{
 						stage.reset();
 						initLevel03();
 					}
@@ -271,8 +277,21 @@ function setRoamLocation(loc){
 				{
 					console.log("MouseUp north, go to r01");	
 				}
-				stage.reset();
-				initLevel01();
+				if(statusLevel[1] == 1)
+					{
+						stage.reset();
+						initLevel01();
+					}
+					else if(statusLevel[1] == 3)
+					{
+					askContinue(1);	
+					}
+					else if(statusLevel[1] == 4)
+					{
+						clear_Level(1)
+						stage.reset();
+						initLevel03();
+					}
 		});
 		
 		south.on('mouseup',function(){
@@ -668,6 +687,7 @@ function delArrowEvents(){
           textFill: 'White',
           align: 'center',
           opacity: 0.0,
+		  cornerRadius: 20,
         });	
 		
 		textLayer.add(askText);
@@ -704,6 +724,7 @@ function delArrowEvents(){
           textFill: '#74FF00',
           align: 'center',
           opacity: 0.0,
+		  cornerRadius: 20,
         });
 		
 		
@@ -726,6 +747,7 @@ function delArrowEvents(){
 			}
 			document.body.style.cursor = 'pointer';
 			q1Text.setTextFill("white");
+			textLayer.draw();
 		});
 		
 		q1Text.on('mouseout',function(){
@@ -735,6 +757,7 @@ function delArrowEvents(){
 			}
 			document.body.style.cursor = 'default';
 			q1Text.setTextFill("#74FF00");
+			textLayer.draw();
 		});
 		
 		
@@ -769,6 +792,7 @@ function delArrowEvents(){
           textFill: '#FF3100',
           align: 'center',
           opacity: 0.0,
+		  cornerRadius: 20,
         });
 		
 		
@@ -791,6 +815,7 @@ function delArrowEvents(){
 			}
 			document.body.style.cursor = 'pointer';
 			q2Text.setTextFill("white");
+			textLayer.draw();
 		});
 		
 		q2Text.on('mouseout',function(){
@@ -800,6 +825,7 @@ function delArrowEvents(){
 			}
 			document.body.style.cursor = 'default';
 			q2Text.setTextFill("#FF3100");
+			textLayer.draw();
 		});
 		
 		
@@ -810,5 +836,229 @@ function delArrowEvents(){
             duration: 2,
 		});
 		
+		textLayer.moveToTop();
+		textLayer.draw();
 	log("Function askRoaming Ended R 815");
+}
+
+
+
+
+function askContinue(id)
+		{
+			log("Function askContinue Started");
+			textLayer.removeChildren();
+			textLayer.draw();
+
+			var textAsk = "je verliest de voortgang voor dit level ?";
+			var textq1 = "Doorgaan";
+			var textq2 = "toch niet";
+			
+			var rect = new Kinetic.Rect({
+          x: 0,
+          y: 0,
+          width: 950,
+          height: 500,
+          fill: 'grey',
+          stroke: 'black',
+          strokeWidth: 1,
+		  opacity: 0,
+        });
+			textLayer.add(rect);
+			textLayer.draw();
+			rect.transitionTo({
+            opacity: 0.75,
+            duration: 1,
+		});
+
+			askText = new Kinetic.Text({
+       		   	x: stage.getWidth() /4 -100,
+        	    y:  stage.getHeight() /4,
+          	   	text: textAsk,
+		  	    padding: 15,
+		  		stroke:'#ecede9',
+          		strokeWidth: 5,
+          		fill: {
+            		start: 	{
+              			x: 0,
+              			y: 0
+            				},
+            		end: 	{
+              			x: 200,
+              			y: 200
+            				},
+            		colorStops: [0, '#4F2009', 1, 'black']
+          			  },
+          fontSize:  35,
+          fontFamily: 'Calibri',
+          textFill: 'White',
+          align: 'center',
+          opacity: 0.0,
+		  cornerRadius: 20,
+        });	
+		
+		textLayer.add(askText);
+		textLayer.draw();
+		askText.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		
+		
+		
+		
+		
+		q1Text = new Kinetic.Text({
+          x: stage.getWidth() /4 -100,
+          y:  stage.getHeight() /4 * 3 - 150,
+          text: textq1,
+		  padding: 15,
+		  stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          fontSize:  25,
+          fontFamily: 'Calibri',
+          textFill: '#74FF00',
+          align: 'center',
+          opacity: 0.0,
+		  cornerRadius: 20,
+        });
+		
+		
+		q1Text.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Mouseup q1");	
+			}
+			
+			if(id == 1)
+			{
+				clear_Level(1)
+				stage.reset();
+				initLevel01();
+			}
+			else if(id == 2)
+			{
+				
+			}
+		});
+		
+		
+		
+		q1Text.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver q1, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+			q1Text.setTextFill('white');
+			textLayer.draw();
+		});
+		
+		q1Text.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut q1, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+			q1Text.setTextFill("#74FF00");
+			textLayer.draw();
+		});
+		
+		
+		textLayer.add(q1Text);
+		textLayer.draw();
+		q1Text.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		
+		
+		q2Text = new Kinetic.Text({
+          x: stage.getWidth() /4 * 3 -200,
+          y:  stage.getHeight() /4 * 3 -150,
+          text: textq2,
+		  padding: 15,
+		  stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          fontSize:  25,
+          fontFamily: 'Calibri',
+          textFill: '#FF3100',
+          align: 'center',
+          opacity: 0.0,
+		  cornerRadius: 20,
+        });
+		
+		
+		q2Text.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Mouseup q2");	
+			}
+			
+			if(id == 1)
+			{
+				setRoamLocation(30);				
+			}
+			else if(id == 2)
+			{
+				
+			}
+		});
+		
+		
+		
+		q2Text.on('mouseover',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOver q2, cursor pointer");	
+			}
+			document.body.style.cursor = 'pointer';
+			q2Text.setTextFill("white");
+			textLayer.draw();
+		});
+		
+		q2Text.on('mouseout',function(){
+			if(debug == 1)
+			{
+			console.log("MouseOut q2, cursor default");	
+			}
+			document.body.style.cursor = 'default';
+			q2Text.setTextFill("#FF3100");
+			textLayer.draw();
+		});
+		
+		
+		textLayer.add(q2Text);
+		textLayer.draw();
+		q2Text.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		
+		textLayer.moveToTop();
+		textLayer.draw();
+		
+	log("Function askContinue Ended R995");
 }
