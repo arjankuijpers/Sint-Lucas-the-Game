@@ -222,30 +222,122 @@ function initBattle(){
 					setTimeout(function(){
 						drawFinalText(1, "Jij denkt het wel te gaan maken, laten we maar eens zien. Hier komt een reken vraag.");
 					},2000);
+					
+					setTimeout(function(){
+						teacher.transitionTo(
+					{
+           			 x:700,
+					 y:65,
+					 scale: {
+   						 x: 0.5,
+						 y: 0.5
+            				},
+					 
+           			duration: 1,
+					});
+					},10000);
 					setTimeout(function(){
 						setFinalQText(1)
 						},13000);
 						
 					setTimeout(function(){
 						setFinalAText(1);
-						},14000);
+						setTimer(1);
+						drawFinalTime(80);
+						},13300);
 				 
 			}
 		}
 
+var timerLevel = new Array();
+var timeLeft = 23;
+function setTimer(tid)
+{
+timerLevel[tid] = setInterval(function()
+{
+	timeLeft--;
+	tText.setText(timeLeft + " seconden");
+	textLayer.draw();
+	log("Timer Elapsed : timeLeft: " + timeLeft);
+	
+	if(timeLeft <= 20)
+	{
+		tText.setTextFill('red');	
+	}
+	if(timeLeft <= 0)
+	{
+		clearInterval(timerLevel[tid]);
+		textLayer.draw();
+		transOff();
+		
+	}
+},1000);	
+}
 
 
 
 
 
 
+function transOff(){
+m_FText.transitionTo({
+			x:400,
+           scale: {
+   						 x: 0.1,
+						 y: 0.1
+            				},
+			duration: 1,
+		});	
+		
+		
+		
+		a_MainText.transitionTo({
+			
+           scale: {
+   						 x: 0.1,
+						 y: 0.1
+            				},
+			duration: 1,
+		});
+		
+		b_MainText.transitionTo({
+			
+           scale: {
+   						 x: 0.1,
+						 y: 0.1
+            				},
+			duration: 1,
+		});	
+		
+		c_MainText.transitionTo({
+			
+           scale: {
+   						 x: 0.1,
+						 y: 0.1
+            				},
+			duration: 1,
+		});
+		
+		d_MainText.transitionTo({
+			
+           scale: {
+   						 x: 0.1,
+						 y: 0.1
+            				},
+			duration: 1,
+		});
+}
 
+
+
+
+var m_FText;
 function setFinalQText(qid)
 	{
 		
 		log("setFinalQText == qid: " + qid)
 	
-		var m_MainText = new Kinetic.Text({
+	 m_FText = new Kinetic.Text({
           x: -150,
           y: 100,
           stroke:'#ecede9',
@@ -275,10 +367,11 @@ function setFinalQText(qid)
             opacity: 0
           },
           cornerRadius: 20,
+		  opacity: 0.5,
         });
-		textLayer.add(m_MainText);
+		textLayer.add(m_FText);
 		textLayer.draw();
-		m_MainText.transitionTo({
+		m_FText.transitionTo({
             x: 300,
 			duration: 1,
 		});
@@ -286,7 +379,10 @@ function setFinalQText(qid)
 }
 
 
-
+var a_MainText;
+var b_MainText;
+var c_MainText;
+var d_MainText;
 function setFinalAText(qid)
 	{
 		
@@ -325,7 +421,7 @@ function setFinalAText(qid)
 		}
 		
 				
-		var a_MainText = new Kinetic.Text({
+		a_MainText = new Kinetic.Text({
           x: 1000,
           y: 250,
           stroke:'#ecede9',
@@ -363,7 +459,7 @@ function setFinalAText(qid)
 			duration: 1,
 		});
 		
-		var b_MainText = new Kinetic.Text({
+	 b_MainText = new Kinetic.Text({
           x: 1000,
           y: 300,
           stroke:'#ecede9',
@@ -403,7 +499,7 @@ function setFinalAText(qid)
 				
 		
 		
-		var c_MainText = new Kinetic.Text({
+		 c_MainText = new Kinetic.Text({
           x: 1000,
           y: 350,
           stroke:'#ecede9',
@@ -441,7 +537,7 @@ function setFinalAText(qid)
 			duration: 1,
 		});
 		
-		var d_MainText = new Kinetic.Text({
+	 d_MainText = new Kinetic.Text({
           x: 1000,
           y: 400,
           stroke:'#ecede9',
@@ -481,6 +577,33 @@ function setFinalAText(qid)
 		textLayer.moveToTop();
 }
 
+
+
+
+
+
+var tText;
+function drawFinalTime(timeLeft)
+{
+	
+tText = new Kinetic.Text({
+          x: 1000,
+          y: 400,
+          text: timeLeft + " Seconden",
+          fontSize: 20,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          align: 'center',
+		  opacity: 0.0,
+        });
+		textLayer.add(tText);
+		textLayer.draw();
+		tText.transitionTo({
+            opacity: 1,
+			x:725,
+            duration: 1,
+		});
+}
 
 
 

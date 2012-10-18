@@ -940,7 +940,7 @@ function askContinue(id)
 		
 		q1Text = new Kinetic.Text({
           x: stage.getWidth() /4 -100,
-          y:  stage.getHeight() /4 * 3 - 300,
+          y:  stage.getHeight() /4 * 3 - 150,
           text: textq1,
 		  padding: 15,
 		  stroke:'#ecede9',
@@ -1130,9 +1130,9 @@ function askFinal()
 			textLayer.removeChildren();
 			textLayer.draw();
 
-			var textAsk = "Eind level spelen";
-			var textq1 = "JA";
-			var textq2 = "Nee, verder met rondlopen";
+			var textAsk = "Eind level vrij gespeeld";
+			var textq1 = "Nu spelen";
+			var textq2 = "verder met rondlopen";
 			
 			var rect = new Kinetic.Rect({
           x: 0,
@@ -1256,7 +1256,7 @@ function askFinal()
 		
 		
 		q2Text = new Kinetic.Text({
-          x: stage.getWidth() /4 * 3,
+          x: stage.getWidth() /4 * 3  -250,
           y:  stage.getHeight() /4 * 3 -150,
           text: textq2,
 		  padding: 15,
