@@ -63,6 +63,13 @@ log("Start (Final)");
 		
 		
 }
+
+var circle1;
+var circle2;
+var circle3;
+var circle4;
+var circle5;
+
 var hudElement;
 var background;
 function initBattle(){
@@ -138,7 +145,7 @@ function initBattle(){
 			
 				}
 				
-				var circle1 = new Kinetic.Circle({
+				circle1 = new Kinetic.Circle({
           x: stage.getWidth() / 2,
           y: 5,
           radius: 5,
@@ -147,7 +154,7 @@ function initBattle(){
           strokeWidth: 2
         });
 		
-		var circle2 = new Kinetic.Circle({
+		circle2 = new Kinetic.Circle({
           x: stage.getWidth() / 2 + 15,
           y: 5,
           radius: 5,
@@ -156,7 +163,7 @@ function initBattle(){
           strokeWidth: 2
         });
 		
-		var circle3 = new Kinetic.Circle({
+		circle3 = new Kinetic.Circle({
           x: stage.getWidth() / 2 + 30,
           y: 5,
           radius: 5,
@@ -164,7 +171,7 @@ function initBattle(){
           stroke: 'black',
           strokeWidth: 2
         });
-		var circle4 = new Kinetic.Circle({
+		circle4 = new Kinetic.Circle({
           x: stage.getWidth() / 2 + 45,
           y: 5,
           radius: 5,
@@ -172,7 +179,7 @@ function initBattle(){
           stroke: 'black',
           strokeWidth: 2
         });
-		var circle5 = new Kinetic.Circle({
+		circle5 = new Kinetic.Circle({
           x: stage.getWidth() / 2 + 60,
           y: 5,
           radius: 5,
@@ -703,6 +710,7 @@ function teacher5()
 					setTimeout(function()
 				{
 					circle1.setFill('grey');
+					secondTextLayer.draw();
 					teacher2();
 					},13000);
 					
@@ -739,6 +747,7 @@ drawFinalText(1,"Je bewijst mijn tegendeel, vooruit dan maar");
 					setTimeout(function()
 				{
 					circle2.setFill('grey');
+					secondTextLayer.draw();
 					teacher3();
 					},13000);
 					
@@ -771,6 +780,7 @@ drawFinalText(1,"Als je er voor inzet, kan je veel bereiken");
 					setTimeout(function()
 				{
 					circle3.setFill('grey');
+					secondTextLayer.draw();
 					teacher4();
 					},13000);
 					
@@ -804,6 +814,7 @@ drawFinalText(1,"Goed gedaan, Javascript is zoals je ziet helemaal niet moeilijk
 					setTimeout(function()
 				{
 					circle4.setFill('grey');
+					secondTextLayer.draw();
 					teacher5();
 					},13000);
 					
@@ -812,6 +823,7 @@ drawFinalText(1,"Goed gedaan, Javascript is zoals je ziet helemaal niet moeilijk
 					
 					case 5:
 					circle5.setFill('grey');
+					secondTextLayer.draw();
 					
 		log("final AnswerGood Case 5 started");
 	transOff();	
