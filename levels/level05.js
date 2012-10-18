@@ -252,6 +252,75 @@ function initBattle(){
 			}
 		}
 
+
+
+
+
+
+
+
+function teacher2()
+		{
+			var teacherImg = new Image();
+			teacherImg.src = "assets/leraren/willem_k.png";
+	
+			teacherImg.onload = function()
+			 {		
+				teacher = new Kinetic.Image(
+					{
+						x: 1000,
+						y: 50,
+					image: teacherImg,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+					setTimeout(function(){
+						drawFinalText(1, "Waarom geef je het nu niet al op, dat is makkelijker.");
+					},2000);
+					
+					setTimeout(function(){
+						teacher.transitionTo(
+					{
+           			 x:700,
+					 y:65,
+					 scale: {
+   						 x: 0.5,
+						 y: 0.5
+            				},
+					 
+           			duration: 1,
+					});
+					},10000);
+					setTimeout(function(){
+						setFinalQText(2)
+						},13000);
+						
+					setTimeout(function(){
+						setFinalAText(2);
+						setTimer(2);
+						drawFinalTime(timeLeft);
+						},13300);
+				 
+			}
+		}
+
+
+
+
+
+
+
+
 		var timerLevel = new Array();
 
 	function setTimer(tid)
@@ -307,6 +376,7 @@ function initBattle(){
 				{
 					if(tid == 1)
 					{
+						log("Draw Final Text 1,1");
 					drawFinalText(1, "Je bent blijkbaar nog niet goed genoeg, kom terug als je het wel aan kan"); 
 					}
 					if(tid == 2)
@@ -325,7 +395,7 @@ function initBattle(){
 					{
 					drawFinalText(1, " text 5"); 
 					}
-					},2000);
+					},2300);
 					
 					setTimeout(function()
 				{
@@ -370,11 +440,14 @@ function initBattle(){
 		case 1:
 		if(finalAnswer[15] == chosen)
 		{
-			
+			finalAnswerGood(1);
 		}
 		else{
-		lost();	
+		lost(1);	
 		}
+		
+		
+		
 		break;
 			
 			case 2:
@@ -383,26 +456,37 @@ function initBattle(){
 			
 		}
 		else{
-		lost();	
+		lost(2);	
 		}
 		break;
+		
+		
+		
+		
 		case 3:
 		if(finalAnswer[35] == chosen)
 		{
 			
 		}
 		else{
-		lost();	
+		lost(3);	
 		}
 		break;
+		
+		
+		
+		
 		case 4:
 		if(finalAnswer[45] == chosen)
 		{
 			
 		}
 		else{
-		lost();	
+		lost(4);	
 		}
+		
+		
+		
 		break;
 		case 5:
 		if(finalAnswer[55] == chosen)
@@ -410,12 +494,80 @@ function initBattle(){
 			
 		}
 		else{
-		lost();	
+		lost(5);	
 		}
 		break;
 		}
 			
 	}
+	
+	
+	
+	function finalAnswerGood(id){
+		log("final AnswerGood Started");
+		
+		switch(id)
+		{
+			case 1:
+		log("finalAnswerGood Case 1 started");
+	transOff();	
+		
+	teacher.transitionTo(
+				{
+           			 x:650,
+					 y:50,
+					 scale: {
+   						 x: 1,
+						 y: 1
+            				},
+           			duration: 1,
+				});
+				
+	drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
+		setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:951,
+					duration: 1,
+				});
+					},11000);
+					break;
+					
+					
+					
+					
+					case 2:
+		log("final AnswerGood Case 2 started");
+	transOff();	
+		
+	teacher.transitionTo(
+				{
+           			 x:650,
+					 y:50,
+					 scale: {
+   						 x: 1,
+						 y: 1
+            				},
+           			duration: 1,
+				});
+				
+	drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
+		setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:951,
+					duration: 1,
+				});
+					},11000);
+					break;
+		}
+	}
+	
+	
+	
+	
 
 	function transOff()
 		{
