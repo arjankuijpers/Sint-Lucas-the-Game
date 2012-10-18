@@ -702,6 +702,7 @@ function teacher5()
 					
 					setTimeout(function()
 				{
+					circle1.setFill('grey');
 					teacher2();
 					},13000);
 					
@@ -737,6 +738,7 @@ drawFinalText(1,"Je bewijst mijn tegendeel, vooruit dan maar");
 					
 					setTimeout(function()
 				{
+					circle2.setFill('grey');
 					teacher3();
 					},13000);
 					
@@ -768,6 +770,7 @@ drawFinalText(1,"Als je er voor inzet, kan je veel bereiken");
 					
 					setTimeout(function()
 				{
+					circle3.setFill('grey');
 					teacher4();
 					},13000);
 					
@@ -800,6 +803,7 @@ drawFinalText(1,"Goed gedaan, Javascript is zoals je ziet helemaal niet moeilijk
 					
 					setTimeout(function()
 				{
+					circle4.setFill('grey');
 					teacher5();
 					},13000);
 					
@@ -807,6 +811,7 @@ drawFinalText(1,"Goed gedaan, Javascript is zoals je ziet helemaal niet moeilijk
 					
 					
 					case 5:
+					circle5.setFill('grey');
 					
 		log("final AnswerGood Case 5 started");
 	transOff();	
