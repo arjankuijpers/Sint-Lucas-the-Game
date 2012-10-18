@@ -223,7 +223,7 @@ function initBattle(){
 						drawFinalText(1, "Jij denkt het wel te gaan maken, laten we maar eens zien. Hier komt een reken vraag.");
 					},2000);
 					setTimeout(function(){
-						setFinalQText("Wat is 15 * 150")
+						setFinalQText(1)
 						},13000);
 				 
 			}
@@ -236,10 +236,10 @@ function initBattle(){
 
 
 
-function setFinalQText(text)
+function setFinalQText(qid)
 	{
 		
-		log("Set Qtext: " + text)
+		log("setFinalQText == qid: " + qid)
 	
 		var m_MainText = new Kinetic.Text({
           x: -150,
@@ -257,7 +257,7 @@ function setFinalQText(text)
             },
             colorStops: [0, '#4F2009', 1, 'black']
           },
-          text: text,
+          text: finalQuestion[qid],
           fontSize: 14,
           fontFamily: 'Calibri',
           textFill: 'white',
@@ -280,6 +280,172 @@ function setFinalQText(text)
 		});
 		textLayer.moveToTop();
 }
+
+
+
+function setFinalAText(qid)
+	{
+		
+		log("Set Qtext: " + text)
+		
+				
+		var a_MainText = new Kinetic.Text({
+          x: -150,
+          y: 100,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: aText,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 600,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+        });
+		textLayer.add(a_MainText);
+		textLayer.draw();
+		a_MainText.transitionTo({
+            x: 300,
+			duration: 1,
+		});
+		
+		var b_MainText = new Kinetic.Text({
+          x: -150,
+          y: 100,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: bText,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 600,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+        });
+		textLayer.add(b_MainText);
+		textLayer.draw();
+		b_MainText.transitionTo({
+            x: 300,
+			duration: 1,
+		});
+				
+		
+		
+		var c_MainText = new Kinetic.Text({
+          x: -150,
+          y: 100,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: cText,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 600,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+        });
+		textLayer.add(c_MainText);
+		textLayer.draw();
+		c_MainText.transitionTo({
+            x: 300,
+			duration: 1,
+		});
+		
+		var d_MainText = new Kinetic.Text({
+          x: -150,
+          y: 100,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: dText,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 600,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+        });
+		textLayer.add(d_MainText);
+		textLayer.draw();
+		d_MainText.transitionTo({
+            x: 300,
+			duration: 1,
+		});
+		textLayer.moveToTop();
+}
+
+
 
 
 

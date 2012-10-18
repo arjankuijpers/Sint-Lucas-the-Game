@@ -111,12 +111,35 @@ myQuestion4[5] ="Welk van de volgende programma's wordt er gebruik bij de 3D vak
 
 
 
-//myAnswer(level)[(Question)]
-myAnswer4[1] = "Passie, plezier & programmeren^Passie, plezier & professionaliteit^perfectie, participatie & plezier^plezier, perfectie &professionaliteit^2";
-myAnswer4[2] = "Geen van beide eerst, het concept^Direct aan beide^Eerst het programmeren^Eerst de art^1";
-myAnswer4[3] = "geen^1^2^3^3";
-myAnswer4[4] = "in het eerste schooljaar^in het derde schooljaar^in de 2e helft van het 2e schooljaar^in het tweede schooljaar^4";
-myAnswer4[5] = "3D's Max^Z Brush^Maya^Google Sketsh-up^1";
+//FINAL LEVEL //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+finalQuestion = new Array();
+finalQuestion[1] = "Wat is 15 * 150";
+finalQuestion[2] = "Wat is ";
+finalQuestion[3] = "Wat is ";
+finalQuestion[4] = "Wat is ";
+
+finalAnswer = new Array();
+finalAnswer[11] = "";
+finalAnswer[12] = "";
+finalAnswer[13] = "";
+finalAnswer[14] = "";
+
+finalAnswer[21] = "";
+finalAnswer[22] = "";
+finalAnswer[23] = "";
+finalAnswer[24] = "";
+
+finalAnswer[31] = "";
+finalAnswer[32] = "";
+finalAnswer[33] = "";
+finalAnswer[34] = "";
+
+finalAnswer[41] = "";
+finalAnswer[42] = "";
+finalAnswer[43] = "";
+finalAnswer[44] = "";
+
 
 
 //manual\\
