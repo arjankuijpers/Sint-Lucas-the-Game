@@ -1,8 +1,8 @@
 //Start Level 05 (final) (boss)
+
+var leraren;
+var rect;
 function initFinal(){
-	
-	
-	inLevel = 5;
 	
 			stage.add(backgroundLayer);
 			stage.add(hudLayer);
@@ -10,7 +10,64 @@ function initFinal(){
 			stage.add(textLayer);
 	
 log("Start (Final)");
+
+	rect = new Kinetic.Rect({
+          x: 0,
+          y: 0,
+          width: 950,
+          height: 500,
+          fill: '#323231',
+        });
+		backgroundLayer.add(rect);
+		backgroundLayer.draw();
+		
+		var ler = new Image();
+		ler.src = "assets/leraren/ler_k.png";
+		ler.onload = function() {		
+		leraren = new Kinetic.Image(
+		{
+			x: 5,
+			y: 475,
+			image: ler,
+			draggable: false,
+		});
+		characterLayer.add(leraren);
+		characterLayer.draw();
+		leraren.transitionTo(
+					{
+						y: 200,
+						duration: 1,
+						
+					});
+		}
+		
+		setTimeout(function(){
+			drawFinalText(1, "Versla alle leraren");
+		},2050);
+		
+		setTimeout(function(){
+			leraren.transitionTo(
+					{
+						y: 600,
+						duration: 1,						
+					});
+		},12000);
+		setTimeout(function(){
+			rest();
+		},14100);
+		
+		
+		
+		
+}
+
+function rest(){
 	
+	characterLayer.remove(leraren);
+	backgroundLayer.remove(rect);
+	
+	hudLayer.moveToTop();
+		
 	var mbg = new Image();
 	mbg.src = "assets/final/bg.png";
 	var he = new Image();
@@ -31,7 +88,7 @@ log("Start (Final)");
 		
 				backgroundLayer.add(background);
 				backgroundLayer.draw();
-				
+				hudLayer.moveToTop();				
 				background.transitionTo(
 					{
             			scale:
@@ -42,7 +99,7 @@ log("Start (Final)");
            				duration: 1,
 					});
 	
-			
+			hudLayer.moveToTop();	
 		
 		
 		he.onload = function() {
@@ -60,6 +117,7 @@ log("Start (Final)");
 		
 			hudLayer.add(hudElement);
 			hudLayer.draw();
+			hudLayer.moveToTop();	
 	
 			hudElement.transitionTo(
 				{
@@ -70,7 +128,7 @@ log("Start (Final)");
             		opacity: 1,
            			duration: 1,
 				});
-				
+				hudLayer.moveToTop();
 			
 		}
 		
@@ -101,4 +159,121 @@ log("Start (Final)");
 	};
 
 		
+}
+
+var fText1;
+var fText2;
+function drawFinalText(id, text)
+{
+	
+	
+	switch(id)
+	{
+		case 1:
+fText1 = new Kinetic.Text({
+          x: 250,
+          y: 110,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: text,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 380,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+		  opacity: 0.0,
+        });
+		textLayer.add(fText1);
+		textLayer.draw();
+		fText1.transitionTo({
+            opacity: 1,
+            duration: 2,
+		});
+		
+		setTimeout(function(){
+			fText1.transitionTo({
+            opacity: 0,
+            duration: 2,
+		});
+		},70000);
+		
+		setTimeout(function(){
+		textLayer.remove(fText1);
+		textLayer.draw();
+		},10000);
+		break;
+		case 2:
+		fText2 = new Kinetic.Text({
+          x: posX,
+          y: posY,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 200,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: text,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 380,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+		  opacity: 0.0,
+        });
+		textLayer.add(fText2);
+		textLayer.draw();
+		fText2.transitionTo({
+            opacity: 1,
+            duration: 2,
+		});
+		
+				setTimeout(function(){
+			fText2.transitionTo({
+            opacity: 0,
+            duration: 2,
+		});
+		},7000);
+		
+		setTimeout(function(){
+		textLayer.remove(fText2);
+		textLayer.draw();
+		},10000);
+		break;
+		default:
+		log("Error Function drawFinal Text id outside switch range");	
+	}
 }

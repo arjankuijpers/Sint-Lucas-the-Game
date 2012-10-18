@@ -95,17 +95,18 @@
 			opacity: 1,
 		});
 		
-		setStatusLevel();
-		if(levelFinal =! 1)
-			{
-		
-				var aGroup = new Kinetic.Group();
+		var aGroup = new Kinetic.Group();
 					aGroup.add(north);
 					aGroup.add(south);
 					aGroup.add(west);
 					aGroup.add(east);
+					characterLayer.add(aGroup);
 		
-				characterLayer.add(aGroup);
+		setStatusLevel();
+		if(levelFinal =! 1)
+			{
+		
+				
 				log("loc: " + loc);
 				setRoamLocation(loc);
 			}
