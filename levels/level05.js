@@ -532,6 +532,12 @@ function teacher2()
 					duration: 1,
 				});
 					},11000);
+					
+					setTimeout(function()
+				{
+					teacher2();
+					},13000);
+					
 					break;
 					
 					
@@ -552,7 +558,7 @@ function teacher2()
            			duration: 1,
 				});
 				
-	drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
+drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
 		setTimeout(function()
 				{
 					teacher.transitionTo(
@@ -561,6 +567,12 @@ function teacher2()
 					duration: 1,
 				});
 					},11000);
+					
+					setTimeout(function()
+				{
+					teacher3();
+					},13000);
+					
 					break;
 		}
 	}
