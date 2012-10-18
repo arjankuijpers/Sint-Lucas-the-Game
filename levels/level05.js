@@ -8,6 +8,7 @@ function initFinal(){
 			stage.add(hudLayer);
 			stage.add(characterLayer);
 			stage.add(textLayer);
+			stage.add(secondTextLayer);
 	
 log("Start (Final)");
 
@@ -53,7 +54,7 @@ log("Start (Final)");
 					});
 		},12000);
 		setTimeout(function(){
-			rest();
+			initBattle();
 		},14100);
 		
 		
@@ -61,7 +62,9 @@ log("Start (Final)");
 		
 }
 
-function rest(){
+function initBattle(){
+	
+	final.play();
 	
 	characterLayer.remove(leraren);
 	backgroundLayer.remove(rect);
@@ -128,38 +131,99 @@ function rest(){
             		opacity: 1,
            			duration: 1,
 				});
-				hudLayer.moveToTop();
+				secondTextLayer.moveToTop();
 			
-		}
+				}
+				
+				var circle1 = new Kinetic.Circle({
+          x: stage.getWidth() / 2,
+          y: 5,
+          radius: 5,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 2
+        });
 		
-		log("Done Loading - Final /n Idle");
+		var circle2 = new Kinetic.Circle({
+          x: stage.getWidth() / 2 + 15,
+          y: 5,
+          radius: 5,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 2
+        });
 		
-		log("Set Hud Stats");
-
-		log("set Text levelHUD - R145 engine.js");
-		log("set Text questionHUD - R146 engine.js");
-		
-		log("Set Score Text:: R69 - level05.js");
-		//setScoreText(125,465,30,String(score));
-		//setHText(200,470,20," Score");
-		
-		log("Done Setting Hud Stats");
-		
-		
-		try{
-		
-		characterLayer.moveToTop();
-		textLayer.moveToTop();
-		}
-		catch(err)
-		{
-			error_Alert(5);
-		}
+		var circle3 = new Kinetic.Circle({
+          x: stage.getWidth() / 2 + 30,
+          y: 5,
+          radius: 5,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 2
+        });
+		var circle4 = new Kinetic.Circle({
+          x: stage.getWidth() / 2 + 45,
+          y: 5,
+          radius: 5,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 2
+        });
+		var circle5 = new Kinetic.Circle({
+          x: stage.getWidth() / 2 + 60,
+          y: 5,
+          radius: 5,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 2
+        });
+			secondTextLayer.add(circle1);
+			secondTextLayer.add(circle2);
+			secondTextLayer.add(circle3);
+			secondTextLayer.add(circle4);
+			secondTextLayer.add(circle5);
+			secondTextLayer.moveToTop();
+			secondTextLayer.draw();
+			
+			teacher1();
+			
 			
 	};
 
 		
 }
+
+
+	function teacher1()
+		{
+			var teacherImg = new Image();
+			teacherImg.src = "assets/leraren/math_k.png";
+	
+			teacherImg.onload = function()
+			 {		
+				var teacher = new Kinetic.Image(
+					{
+						x: 1000,
+						y: 50,
+					image: teacherImg,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+				
+				drawFinalText(1, "Jij denkt het wel te gaan maken, laten we maar eens zien. /n Hier komt een reken vraag."); 
+			}
+		}
+
 
 var fText1;
 var fText2;
