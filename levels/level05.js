@@ -225,6 +225,10 @@ function initBattle(){
 					setTimeout(function(){
 						setFinalQText(1)
 						},13000);
+						
+					setTimeout(function(){
+						setFinalAText(1);
+						},1500);
 				 
 			}
 		}
@@ -286,12 +290,44 @@ function setFinalQText(qid)
 function setFinalAText(qid)
 	{
 		
-		log("Set Qtext: " + text)
+		log("setFinalAText --- qid: " + qid)
+		switch(qid)
+		{
+			case 1:
+			aText = finalAnswer[11] = "";
+			bText = finalAnswer[12] = "";
+			cText = finalAnswer[13] = "";
+			dText = finalAnswer[14] = "";
+			break;
+			case 2:
+			aText = finalAnswer[21] = "";
+			bText = finalAnswer[22] = "";
+			cText = finalAnswer[23] = "";
+			dText = finalAnswer[24] = "";
+			
+			break;
+			case 3:
+			aText = finalAnswer[31] = "";
+			bText = finalAnswer[32] = "";
+			cText = finalAnswer[33] = "";
+			dText = finalAnswer[34] = "";
+			break;
+			
+			case 4:
+			aText = finalAnswer[41] = "";
+			bText = finalAnswer[42] = "";
+			cText = finalAnswer[43] = "";
+			dText = finalAnswer[44] = "";
+			break;
+			default:
+			log("Set Final Answer switch outside range");
+			
+		}
 		
 				
 		var a_MainText = new Kinetic.Text({
-          x: -150,
-          y: 100,
+          x: 1000,
+          y: 250,
           stroke:'#ecede9',
           strokeWidth: 5,
           fill: {
@@ -323,13 +359,13 @@ function setFinalAText(qid)
 		textLayer.add(a_MainText);
 		textLayer.draw();
 		a_MainText.transitionTo({
-            x: 300,
+            x: 50,
 			duration: 1,
 		});
 		
 		var b_MainText = new Kinetic.Text({
-          x: -150,
-          y: 100,
+          x: 1000,
+          y: 300,
           stroke:'#ecede9',
           strokeWidth: 5,
           fill: {
@@ -361,15 +397,15 @@ function setFinalAText(qid)
 		textLayer.add(b_MainText);
 		textLayer.draw();
 		b_MainText.transitionTo({
-            x: 300,
+            x: 50,
 			duration: 1,
 		});
 				
 		
 		
 		var c_MainText = new Kinetic.Text({
-          x: -150,
-          y: 100,
+          x: 1000,
+          y: 350,
           stroke:'#ecede9',
           strokeWidth: 5,
           fill: {
@@ -401,13 +437,13 @@ function setFinalAText(qid)
 		textLayer.add(c_MainText);
 		textLayer.draw();
 		c_MainText.transitionTo({
-            x: 300,
+            x: 50,
 			duration: 1,
 		});
 		
 		var d_MainText = new Kinetic.Text({
-          x: -150,
-          y: 100,
+          x: 1000,
+          y: 400,
           stroke:'#ecede9',
           strokeWidth: 5,
           fill: {
@@ -439,7 +475,7 @@ function setFinalAText(qid)
 		textLayer.add(d_MainText);
 		textLayer.draw();
 		d_MainText.transitionTo({
-            x: 300,
+            x: 50,
 			duration: 1,
 		});
 		textLayer.moveToTop();
