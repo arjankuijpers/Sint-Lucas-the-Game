@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05075 ,QJS integrated"
+var version = "Game v05076 ,QJS integrated"
 
 var debug = 1;
 
@@ -622,6 +622,52 @@ function clear_Level(level){
 		default:
 		error_Alert(8);
 	}
+}
+
+
+function wipe_Memory()
+{
+	
+	
+question_OS = 0;
+
+levelSave = 0;
+difficultySave = 0;
+
+roaming = 0;
+
+timeCount = 0;
+score[0] = 0;
+score[1] = 0;
+score[2] = 0;
+score[3] = 0;
+score[4] = 0;
+
+allProgress = 0;
+
+progress[1] = 0;
+progress[2] = 0;
+progress[3] = 0;
+progress[4] = 0;
+
+	goodInLevel[1] = 0;
+	goodInLevel[2] = 0;
+	goodInLevel[3] = 0;
+	goodInLevel[4] = 0;
+allGood = 0;
+
+inLevel = 0;
+questNumber = 0;
+
+levelFinal = 0;
+
+statusLevel[1] = 1;
+statusLevel[2] = 1;
+statusLevel[3] = 2;
+statusLevel[4] = 2;
+
+timeLeft = null;
+	
 }
 
 

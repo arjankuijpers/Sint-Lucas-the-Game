@@ -919,9 +919,10 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 				
 				setTimeout(function()
 				{
+					wipe_Memory();
 					stage.reset();
 					initState05();
-					},42000);
+					},48000);
 					break;
 		}
 	}
