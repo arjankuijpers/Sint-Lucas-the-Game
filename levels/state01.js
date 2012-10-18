@@ -25,7 +25,7 @@ dragHereImg = new Image();
 dragHereImg.src = "assets/drag_here.png";
 
 dragAbleImg = new Image();
-dragAbleImg.src = "assets/sc_con.png";
+dragAbleImg.src = "assets/button.png";
 
 backgroundImg.onload = function() {
 background = new Kinetic.Image(

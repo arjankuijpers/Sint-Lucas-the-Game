@@ -14,7 +14,7 @@ console.log("initializing State 06 (Tutorial)");
 	var splash = new Image();
 	splash.src = "assets/createc.png";
 	var conImg = new Image();
-	conImg.src = "assets/sc_con.png";
+	conImg.src = "assets/button.png";
 	
 	splash.onload = function() {
 		

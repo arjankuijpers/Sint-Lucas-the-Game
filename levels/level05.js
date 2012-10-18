@@ -4,7 +4,7 @@ var leraren;
 var rect;
 var timeLeft;
 function initFinal(){
-	timeLeft = 23;
+	timeLeft = 60;
 	
 			stage.add(backgroundLayer);
 			stage.add(hudLayer);
@@ -246,7 +246,7 @@ function initBattle(){
 					setTimeout(function(){
 						setFinalAText(1);
 						setTimer(1);
-						drawFinalTime(80);
+						drawFinalTime(timeLeft);
 						},13300);
 				 
 			}
@@ -308,12 +308,179 @@ function teacher2()
 					setTimeout(function(){
 						setFinalAText(2);
 						setTimer(2);
-						drawFinalTime(timeLeft);
+						},13300);
+				 
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		function teacher3()
+		{
+			var teacherImg = new Image();
+			teacherImg.src = "assets/leraren/robin_k.png";
+	
+			teacherImg.onload = function()
+			 {		
+				teacher = new Kinetic.Image(
+					{
+						x: 1000,
+						y: 50,
+					image: teacherImg,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+					setTimeout(function(){
+						drawFinalText(1, "ik denk wel dat je het kan.. succes");
+					},2000);
+					
+					setTimeout(function(){
+						teacher.transitionTo(
+					{
+           			 x:700,
+					 y:65,
+					 scale: {
+   						 x: 0.5,
+						 y: 0.5
+            				},
+					 
+           			duration: 1,
+					});
+					},10000);
+					setTimeout(function(){
+						setFinalQText(3)
+						},13000);
+						
+					setTimeout(function(){
+						setFinalAText(3);
+						setTimer(3);
 						},13300);
 				 
 			}
 		}
 
+function teacher4()
+		{
+			var teacherImg = new Image();
+			teacherImg.src = "assets/leraren/luc_k.png";
+	
+			teacherImg.onload = function()
+			 {		
+				teacher = new Kinetic.Image(
+					{
+						x: 1000,
+						y: 50,
+					image: teacherImg,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+					setTimeout(function(){
+						drawFinalText(1, "Unity is geweldig, het zou zonde zijn als je dat zou missen");
+					},2000);
+					
+					setTimeout(function(){
+						teacher.transitionTo(
+					{
+           			 x:700,
+					 y:65,
+					 scale: {
+   						 x: 0.5,
+						 y: 0.5
+            				},
+					 
+           			duration: 1,
+					});
+					},10000);
+					setTimeout(function(){
+						setFinalQText(4)
+						},13000);
+						
+					setTimeout(function(){
+						setFinalAText(4);
+						setTimer(4);
+						},13300);
+				 
+			}
+		}
+
+
+function teacher5()
+		{
+			var teacherImg = new Image();
+			teacherImg.src = "assets/leraren/rene_k.png";
+	
+			teacherImg.onload = function()
+			 {		
+				teacher = new Kinetic.Image(
+					{
+						x: 1000,
+						y: 50,
+					image: teacherImg,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+					setTimeout(function(){
+						drawFinalText(1, "We vinden de 3 p's heel belangrijk mensen, dat moet terug komen in ons werk, dus nu ook");
+					},2000);
+					
+					setTimeout(function(){
+						teacher.transitionTo(
+					{
+           			 x:700,
+					 y:65,
+					 scale: {
+   						 x: 0.5,
+						 y: 0.5
+            				},
+					 
+           			duration: 1,
+					});
+					},10000);
+					setTimeout(function(){
+						setFinalQText(5)
+						},13000);
+						
+					setTimeout(function(){
+						setFinalAText(5);
+						setTimer(5);
+						},13300);
+				 
+			}
+		}
 
 
 
@@ -381,7 +548,7 @@ function teacher2()
 					}
 					if(tid == 2)
 					{
-					drawFinalText(1, " text 2"); 
+					drawFinalText(1, "Zakken, had je beter de moeite niet kunnen nemen, probeer opnieuw als je denkt dat je dit keer gaat halen."); 
 					}
 					if(tid == 3)
 					{
@@ -453,7 +620,7 @@ function teacher2()
 			case 2:
 			if(finalAnswer[25] == chosen)
 		{
-			
+			finalAnswerGood(2);
 		}
 		else{
 		lost(2);	
@@ -466,7 +633,7 @@ function teacher2()
 		case 3:
 		if(finalAnswer[35] == chosen)
 		{
-			
+			finalAnswerGood(3);
 		}
 		else{
 		lost(3);	
@@ -479,7 +646,7 @@ function teacher2()
 		case 4:
 		if(finalAnswer[45] == chosen)
 		{
-			
+			finalAnswerGood(4);
 		}
 		else{
 		lost(4);	
@@ -491,7 +658,7 @@ function teacher2()
 		case 5:
 		if(finalAnswer[55] == chosen)
 		{
-			
+			finalAnswerGood(5);
 		}
 		else{
 		lost(5);	
@@ -558,7 +725,7 @@ function teacher2()
            			duration: 1,
 				});
 				
-drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
+drawFinalText(1,"Je bewijst mijn tegendeel, vooruit dan maar");
 		setTimeout(function()
 				{
 					teacher.transitionTo(
@@ -574,8 +741,331 @@ drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter mee
 					},13000);
 					
 					break;
+					case 3:
+		log("final AnswerGood Case 3 started");
+	transOff();	
+		
+	teacher.transitionTo(
+				{
+           			 x:650,
+					 y:50,
+					 scale: {
+   						 x: 1,
+						 y: 1
+            				},
+           			duration: 1,
+				});
+				
+drawFinalText(1,"Als je er voor inzet, kan je veel bereiken");
+		setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:951,
+					duration: 1,
+				});
+					},11000);
+					
+					setTimeout(function()
+				{
+					teacher4();
+					},13000);
+					
+					break;
+					
+					case 4:
+		log("final AnswerGood Case 4 started");
+	transOff();	
+		
+	teacher.transitionTo(
+				{
+           			 x:650,
+					 y:50,
+					 scale: {
+   						 x: 1,
+						 y: 1
+            				},
+           			duration: 1,
+				});
+				
+drawFinalText(1,"Goed gedaan, Javascript is zoals je ziet helemaal niet moeilijk");
+		setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:951,
+					duration: 1,
+				});
+					},11000);
+					
+					setTimeout(function()
+				{
+					teacher5();
+					},13000);
+					
+					break;
+					
+					
+					case 5:
+					
+		log("final AnswerGood Case 5 started");
+	transOff();	
+		
+	teacher.transitionTo(
+				{
+           			 x:650,
+					 y:50,
+					 scale: {
+   						 x: 1,
+						 y: 1
+            				},
+           			duration: 1,
+				});
+				
+drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed onder de knie");
+		setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:350,
+					scale: {
+   						 x: 2,
+						 y: 2
+            				},
+					
+					duration: 1,
+				});
+				log("<AUDIO> final.pause");
+				final.pause();
+				log("<AUDIO> final.currenttime = 0");
+				final.currentTime = 0;
+				
+					},11000);
+					
+					setTimeout(function()
+				{
+					log("drawFinalText");
+					drawFinalText(1,"Goed Gedaan, je hebt alle vragen juist beantwoord");
+					},13000);
+					
+					setTimeout(function()
+				{
+					teacher.transitionTo(
+				{
+					x:-400,
+					scale: {
+   						 x: 1,
+						 y: 1
+            				},
+					
+					duration: 1,
+				});
+					hudElement.transitionTo(
+				{
+					scale: {
+   						 x: 4,
+						 y: 4
+            				},
+					opacity: 0,					
+					duration: 1,
+				});
+
+					},18000);
+					
+					setTimeout(function()
+				{	
+					hudLayer.removeChildren();
+					textLayer.removeChildren();
+					secondTextLayer.removeChildren();
+					textLayer.draw();
+					secondTextLayer.draw();
+					
+					drawAllTeachers();
+					},22000);
+					
+					setTimeout(function()
+				{	
+					setSText(600, 300, 15, "Willem1");
+					setSText(450, 300, 15, "Willem2");
+					setSText(300, 300, 15, "Willem3");
+					setSText(150, 300, 15, "Willem4");
+					setSText(800, 300, 15, "Willem5");
+				},32000);
+				
+				setTimeout(function()
+				{	
+				log("Set Score and timeleft text");
+					score[0] = score[1] + score[2] + score[3] + score[4];
+					setSText(475,400,15,"Totale Score: " + score[0]);
+					setSText(475,430,15,"Tijd over   : " + timeLeft + "Seconden");
+				},36000);
+				
+				setTimeout(function()
+				{
+					stage.reset();
+					initState05();
+					},42000);
+					break;
 		}
 	}
+	
+	
+	
+	
+	function drawAllTeachers()
+	{
+		setTimeout(function()
+				{
+	var teacherImg1 = new Image();
+			teacherImg1.src = "assets/leraren/willem_k.png";
+	
+			teacherImg1.onload = function()
+			 {		
+			var	teacher1 = new Kinetic.Image(
+					{
+						x: -300,
+						y: 50,
+					image: teacherImg1,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher1);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher1.transitionTo(
+				{
+           			 x:650,
+           			duration: 1,
+				});
+				
+			 }
+					},2000);
+					
+					
+					
+					
+					
+					setTimeout(function()
+				{
+	var teacher2Img = new Image();
+			teacher2Img.src = "assets/leraren/luc_k.png";
+	
+			teacher2Img.onload = function()
+			 {		
+			var	teacher2 = new Kinetic.Image(
+					{
+						x: -300,
+						y: 50,
+					image: teacher2Img,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher2);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher2.transitionTo(
+				{
+           			 x:550,
+           			duration: 1,
+				});
+				
+			 }
+					},4000);
+					
+					
+					setTimeout(function()
+				{
+	var teacher3Img = new Image();
+			teacher3Img.src = "assets/leraren/math_k.png";
+	
+			teacher3Img.onload = function()
+			 {		
+			var	teacher3 = new Kinetic.Image(
+					{
+						x: -300,
+						y: 20,
+					image: teacher3Img,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher3);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher3.transitionTo(
+				{
+           			 x:450,
+           			duration: 1,
+				});
+				
+			 }
+					},6000);
+					
+					setTimeout(function()
+				{
+	var teacher4Img = new Image();
+			teacher4Img.src = "assets/leraren/robin_k.png";
+	
+			teacher4Img.onload = function()
+			 {		
+			var	teacher4 = new Kinetic.Image(
+					{
+						x: -300,
+						y: 50,
+					image: teacher4Img,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher4);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher4.transitionTo(
+				{
+           			 x:350,
+           			duration: 1,
+				});
+				
+			 }
+					},8000);
+					
+					setTimeout(function()
+				{
+	var teacher5Img = new Image();
+			teacher5Img.src = "assets/leraren/rene_k.png";
+	
+			teacher5Img.onload = function()
+			 {		
+			var	teacher5 = new Kinetic.Image(
+					{
+						x: -300,
+						y: 50,
+					image: teacher5Img,
+				draggable: false,
+					});
+					
+					characterLayer.add(teacher5);
+					characterLayer.draw();
+					characterLayer.moveToTop();
+					hudLayer.moveToTop();
+					secondTextLayer.moveToTop();	
+					teacher5.transitionTo(
+				{
+           			 x:250,
+           			duration: 1,
+				});
+				
+			 }
+					},10000);
+		
+	}
+	
 	
 	
 	

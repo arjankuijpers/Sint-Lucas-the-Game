@@ -148,7 +148,7 @@ finalAnswer[51] = "laat";
 finalAnswer[52] = "later";
 finalAnswer[53] = "laatste";
 finalAnswer[54] = "laterdanlaat";
-finalAnswer[55] = "5";
+finalAnswer[55] = "4";
 
 
 

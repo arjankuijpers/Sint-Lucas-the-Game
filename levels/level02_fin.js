@@ -73,7 +73,7 @@ console.log("Start State Level02 FINISHED");
 		log("Done Loading - Level02 Finished /n Idle");
 		
 		var conImg = new Image();
-		conImg.src = "assets/sc_con.png";
+		conImg.src = "assets/button.png";
 		
 		conImg.onload = function() {
 		var con = new Kinetic.Image(
