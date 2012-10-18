@@ -2,7 +2,9 @@
 
 var leraren;
 var rect;
+var timeLeft;
 function initFinal(){
+	timeLeft = 23;
 	
 			stage.add(backgroundLayer);
 			stage.add(hudLayer);
@@ -61,7 +63,8 @@ log("Start (Final)");
 		
 		
 }
-
+var hudElement;
+var background;
 function initBattle(){
 	
 	final.play();
@@ -77,7 +80,7 @@ function initBattle(){
 	he.src = "assets/he1.png";
 	
 	mbg.onload = function() {		
-		var background = new Kinetic.Image(
+	 background = new Kinetic.Image(
 		{
 			x: 0,
 			y: 0,
@@ -106,7 +109,7 @@ function initBattle(){
 		
 		
 		he.onload = function() {
-		var hudElement = new Kinetic.Image(
+	hudElement = new Kinetic.Image(
 		{
 			x: 0,
 			y: 0,
@@ -193,7 +196,7 @@ function initBattle(){
 		
 }
 
-
+	var teacher;
 	function teacher1()
 		{
 			var teacherImg = new Image();
@@ -201,7 +204,7 @@ function initBattle(){
 	
 			teacherImg.onload = function()
 			 {		
-				var teacher = new Kinetic.Image(
+				teacher = new Kinetic.Image(
 					{
 						x: 1000,
 						y: 50,
@@ -249,82 +252,223 @@ function initBattle(){
 			}
 		}
 
-var timerLevel = new Array();
-var timeLeft = 23;
-function setTimer(tid)
-{
-timerLevel[tid] = setInterval(function()
-{
-	timeLeft--;
-	tText.setText(timeLeft + " seconden");
-	textLayer.draw();
-	log("Timer Elapsed : timeLeft: " + timeLeft);
+		var timerLevel = new Array();
+
+	function setTimer(tid)
+		{
+			timerLevel[tid] = setInterval(function()
+				{
+					timeLeft--;
+					tText.setText(timeLeft + " seconden");
+					textLayer.draw();
+					log("Timer Elapsed : timeLeft: " + timeLeft);
 	
-	if(timeLeft <= 20)
-	{
-		tText.setTextFill('red');	
-	}
-	if(timeLeft <= 0)
-	{
-		clearInterval(timerLevel[tid]);
-		textLayer.draw();
-		transOff();
+					if(timeLeft <= 20)
+						{
+							tText.setTextFill('red');	
+						}
+					if(timeLeft <= 0)
+						{
+							clearInterval(timerLevel[tid]);
+							textLayer.draw();
+							lost(tid);
+							
+							
+							
+						}
+				},1000);	
+			}
+
+
+	function lost(tid)
+	
+		{
+			transOff();
+							
+			setTimeout(function()
+				{
+					textLayer.removeChildren();
+					textLayer.draw();
+					
+					teacher.transitionTo(
+						{
+           					 x:650,
+							 y:50,
+							 scale:
+							 {
+   								 x: 1,
+						 		 y: 1
+            				 },
+					 		duration: 1,
+						});	
+				},2000);
+				
+				setTimeout(function()
+				{
+					if(tid == 1)
+					{
+					drawFinalText(1, "Je bent blijkbaar nog niet goed genoeg, kom terug als je het wel aan kan"); 
+					}
+					if(tid == 2)
+					{
+					drawFinalText(1, " text 2"); 
+					}
+					if(tid == 3)
+					{
+					drawFinalText(1, " text 3"); 
+					}
+					if(tid == 4)
+					{
+					drawFinalText(1, " text 4"); 
+					}
+					if(tid == 5)
+					{
+					drawFinalText(1, " text 5"); 
+					}
+					},2000);
+					
+					setTimeout(function()
+				{
+										
+					secondTextLayer.removeChildren();
+					secondTextLayer.draw();
+					teacher.transitionTo(
+					{
+						opacity: 0,
+						duration: 1,
+					});
+					background.transitionTo(
+					{
+            			x:-951,
+						duration: 1,
+					});
+					hudElement.transitionTo(
+					{
+            			x:951,
+						duration: 1,
+					});
+					backgroundLayer.add(rect);
+					background.moveToTop();
+					backgroundLayer.draw();
+					
+					final.pause();
+					final.currentTime = 0;
+					},11000);
+					setTimeout(function()
+				{
+					stage.reset();
+					initRoam(20);
+					},13000);
+		}
 		
+	function checkFinalAnswer(qid,chosen)
+	{
+		clearInterval(timerLevel[qid]);
+		
+		switch(qid)
+		{
+		case 1:
+		if(finalAnswer[15] == chosen)
+		{
+			
+		}
+		else{
+		lost();	
+		}
+		break;
+			
+			case 2:
+			if(finalAnswer[25] == chosen)
+		{
+			
+		}
+		else{
+		lost();	
+		}
+		break;
+		case 3:
+		if(finalAnswer[35] == chosen)
+		{
+			
+		}
+		else{
+		lost();	
+		}
+		break;
+		case 4:
+		if(finalAnswer[45] == chosen)
+		{
+			
+		}
+		else{
+		lost();	
+		}
+		break;
+		case 5:
+		if(finalAnswer[55] == chosen)
+		{
+			
+		}
+		else{
+		lost();	
+		}
+		break;
+		}
+			
 	}
-},1000);	
-}
 
-
-
-
-
-
-function transOff(){
-m_FText.transitionTo({
-			x:400,
-           scale: {
-   						 x: 0.1,
-						 y: 0.1
-            				},
-			duration: 1,
+	function transOff()
+		{
+			m_FText.transitionTo({
+				x:400,
+           		scale: {
+   			x: 0.1,
+			y: 0.1
+            			},
+				opacity: 0,
+				duration: 1,
 		});	
 		
 		
 		
-		a_MainText.transitionTo({
-			
-           scale: {
-   						 x: 0.1,
-						 y: 0.1
-            				},
-			duration: 1,
+			a_MainText.transitionTo({
+				x:400,
+           		scale: {
+   			 x: 0.1,
+			 y: 0.1
+           				},
+				opacity: 0,
+				duration: 1,
 		});
-		
-		b_MainText.transitionTo({
 			
-           scale: {
-   						 x: 0.1,
-						 y: 0.1
-            				},
-			duration: 1,
+		b_MainText.transitionTo({
+				x:400,
+        	   scale: {
+  			 x: 0.1,
+			 y: 0.1
+            			},
+				opacity: 0,
+				duration: 1,
 		});	
 		
 		c_MainText.transitionTo({
-			
-           scale: {
-   						 x: 0.1,
-						 y: 0.1
-            				},
-			duration: 1,
+				x:400,
+           		scale: {
+   		 x: 0.1,
+		 y: 0.1
+           				},
+				opacity: 0,
+				duration: 1,
 		});
 		
 		d_MainText.transitionTo({
-			
-           scale: {
-   						 x: 0.1,
-						 y: 0.1
-            				},
-			duration: 1,
+				x:400,
+         		scale: {
+   					 x: 0.1,
+					 y: 0.1
+           				},
+				opacity: 0,
+				duration: 1,
 		});
 }
 
@@ -437,7 +581,7 @@ function setFinalAText(qid)
             },
             colorStops: [0, '#4F2009', 1, 'black']
           },
-          text: aText,
+          text: "A. " + aText,
           fontSize: 14,
           fontFamily: 'Calibri',
           textFill: 'white',
@@ -452,6 +596,15 @@ function setFinalAText(qid)
           },
           cornerRadius: 20,
         });
+		
+		a_MainText.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Clicked A, Go to checkFinalAnswer(A)");	
+			}
+			checkFinalAnswer(qid,1)
+		});
+		
 		textLayer.add(a_MainText);
 		textLayer.draw();
 		a_MainText.transitionTo({
@@ -475,7 +628,7 @@ function setFinalAText(qid)
             },
             colorStops: [0, '#4F2009', 1, 'black']
           },
-          text: bText,
+          text: "B. " + bText,
           fontSize: 14,
           fontFamily: 'Calibri',
           textFill: 'white',
@@ -490,6 +643,14 @@ function setFinalAText(qid)
           },
           cornerRadius: 20,
         });
+		
+		b_MainText.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Clicked B, Go to checkFinalAnswer(B)");	
+			}
+			checkFinalAnswer(qid,2)
+		});
 		textLayer.add(b_MainText);
 		textLayer.draw();
 		b_MainText.transitionTo({
@@ -515,7 +676,7 @@ function setFinalAText(qid)
             },
             colorStops: [0, '#4F2009', 1, 'black']
           },
-          text: cText,
+          text: "C." + cText,
           fontSize: 14,
           fontFamily: 'Calibri',
           textFill: 'white',
@@ -530,6 +691,15 @@ function setFinalAText(qid)
           },
           cornerRadius: 20,
         });
+		
+		c_MainText.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Clicked C, Go to checkFinalAnswer(C)");	
+			}
+			checkFinalAnswer(qid,3)
+		});
+		
 		textLayer.add(c_MainText);
 		textLayer.draw();
 		c_MainText.transitionTo({
@@ -553,7 +723,7 @@ function setFinalAText(qid)
             },
             colorStops: [0, '#4F2009', 1, 'black']
           },
-          text: dText,
+          text: "D. " + dText,
           fontSize: 14,
           fontFamily: 'Calibri',
           textFill: 'white',
@@ -568,6 +738,14 @@ function setFinalAText(qid)
           },
           cornerRadius: 20,
         });
+		
+		d_MainText.on('mouseup',function(){
+			if(debug == 1)
+			{
+			console.log("Clicked D, Go to checkFinalAnswer(D)");	
+			}
+			checkFinalAnswer(qid,4)
+		});
 		textLayer.add(d_MainText);
 		textLayer.draw();
 		d_MainText.transitionTo({

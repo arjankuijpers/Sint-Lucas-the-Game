@@ -124,21 +124,31 @@ finalAnswer[11] = "iets";
 finalAnswer[12] = "iets meer";
 finalAnswer[13] = "beetje meer";
 finalAnswer[14] = "meer bij over ijsel";
+finalAnswer[15] = "1";
 
-finalAnswer[21] = "";
-finalAnswer[22] = "";
-finalAnswer[23] = "";
-finalAnswer[24] = "";
+finalAnswer[21] = "test";
+finalAnswer[22] = "testje";
+finalAnswer[23] = "testen";
+finalAnswer[24] = "veel test";
+finalAnswer[25] = "2";
 
-finalAnswer[31] = "";
-finalAnswer[32] = "";
-finalAnswer[33] = "";
-finalAnswer[34] = "";
+finalAnswer[31] = "hoi";
+finalAnswer[32] = "hallow";
+finalAnswer[33] = "hoe gaat het";
+finalAnswer[34] = "hallo, hoe gaat het met jou";
+finalAnswer[35] = "3";
 
-finalAnswer[41] = "";
-finalAnswer[42] = "";
-finalAnswer[43] = "";
-finalAnswer[44] = "";
+finalAnswer[41] = "vier";
+finalAnswer[42] = "vieren";
+finalAnswer[43] = "vierenvier";
+finalAnswer[44] = "vierenvieren";
+finalAnswer[45] = "4";
+
+finalAnswer[51] = "laat";
+finalAnswer[52] = "later";
+finalAnswer[53] = "laatste";
+finalAnswer[54] = "laterdanlaat";
+finalAnswer[55] = "5";
 
 
 
