@@ -219,10 +219,70 @@ function initBattle(){
            			 x:650,
            			duration: 1,
 				});
-				
-				drawFinalText(1, "Jij denkt het wel te gaan maken, laten we maar eens zien. /n Hier komt een reken vraag."); 
+					setTimeout(function(){
+						drawFinalText(1, "Jij denkt het wel te gaan maken, laten we maar eens zien. Hier komt een reken vraag.");
+					},2000);
+					setTimeout(function(){
+						setFinalQText("Wat is 15 * 150")
+						},13000);
+				 
 			}
 		}
+
+
+
+
+
+
+
+
+function setFinalQText(text)
+	{
+		
+		log("Set Qtext: " + text)
+	
+		var m_MainText = new Kinetic.Text({
+          x: -150,
+          y: 100,
+          stroke:'#ecede9',
+          strokeWidth: 5,
+          fill: {
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          },
+          text: text,
+          fontSize: 14,
+          fontFamily: 'Calibri',
+          textFill: 'white',
+          width: 600,
+          padding: 20,
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          cornerRadius: 20,
+        });
+		textLayer.add(m_MainText);
+		textLayer.draw();
+		m_MainText.transitionTo({
+            x: 300,
+			duration: 1,
+		});
+		textLayer.moveToTop();
+}
+
+
+
 
 
 var fText1;
