@@ -103,16 +103,14 @@
 					characterLayer.add(aGroup);
 		
 		setStatusLevel();
-		if(levelFinal =! 1)
+		if(levelFinal == 1)
 			{
-		
-				
-				log("loc: " + loc);
-				setRoamLocation(loc);
+		askFinal();		
 			}
 		else
 			{
-				askFinal();
+				log("loc: " + loc);
+				setRoamLocation(loc);
 			}
 		
 	}
@@ -942,7 +940,7 @@ function askContinue(id)
 		
 		q1Text = new Kinetic.Text({
           x: stage.getWidth() /4 -100,
-          y:  stage.getHeight() /4 * 3 - 150,
+          y:  stage.getHeight() /4 * 3 - 300,
           text: textq1,
 		  padding: 15,
 		  stroke:'#ecede9',
