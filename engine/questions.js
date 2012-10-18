@@ -120,10 +120,10 @@ finalQuestion[3] = "Wat is ";
 finalQuestion[4] = "Wat is ";
 
 finalAnswer = new Array();
-finalAnswer[11] = "";
-finalAnswer[12] = "";
-finalAnswer[13] = "";
-finalAnswer[14] = "";
+finalAnswer[11] = "iets";
+finalAnswer[12] = "iets meer";
+finalAnswer[13] = "beetje meer";
+finalAnswer[14] = "meer bij over ijsel";
 
 finalAnswer[21] = "";
 finalAnswer[22] = "";

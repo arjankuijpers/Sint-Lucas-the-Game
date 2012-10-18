@@ -228,7 +228,7 @@ function initBattle(){
 						
 					setTimeout(function(){
 						setFinalAText(1);
-						},1500);
+						},14000);
 				 
 			}
 		}
@@ -294,30 +294,30 @@ function setFinalAText(qid)
 		switch(qid)
 		{
 			case 1:
-			aText = finalAnswer[11] = "";
-			bText = finalAnswer[12] = "";
-			cText = finalAnswer[13] = "";
-			dText = finalAnswer[14] = "";
+			aText = finalAnswer[11];
+			bText = finalAnswer[12];
+			cText = finalAnswer[13];
+			dText = finalAnswer[14];
 			break;
 			case 2:
-			aText = finalAnswer[21] = "";
-			bText = finalAnswer[22] = "";
-			cText = finalAnswer[23] = "";
-			dText = finalAnswer[24] = "";
+			aText = finalAnswer[21];
+			bText = finalAnswer[22];
+			cText = finalAnswer[23];
+			dText = finalAnswer[24];
 			
 			break;
 			case 3:
-			aText = finalAnswer[31] = "";
-			bText = finalAnswer[32] = "";
-			cText = finalAnswer[33] = "";
-			dText = finalAnswer[34] = "";
+			aText = finalAnswer[31];
+			bText = finalAnswer[32];
+			cText = finalAnswer[33];
+			dText = finalAnswer[34];
 			break;
 			
 			case 4:
-			aText = finalAnswer[41] = "";
-			bText = finalAnswer[42] = "";
-			cText = finalAnswer[43] = "";
-			dText = finalAnswer[44] = "";
+			aText = finalAnswer[41];
+			bText = finalAnswer[42];
+			cText = finalAnswer[43];
+			dText = finalAnswer[44];
 			break;
 			default:
 			log("Set Final Answer switch outside range");

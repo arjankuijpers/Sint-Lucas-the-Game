@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05071 ,QJS integrated"
+var version = "Game v05072 ,QJS integrated"
 
 var debug = 1;
 
