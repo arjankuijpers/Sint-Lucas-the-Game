@@ -37,7 +37,7 @@ var allGood = 0;
 var inLevel = 0;
 var questNumber = 0;
 
-var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
+var levelFinal = 1; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
 var statusLevel = new Array();
 statusLevel[1] = 1;
