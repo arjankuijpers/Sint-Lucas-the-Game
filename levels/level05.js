@@ -1256,8 +1256,46 @@ function setFinalAText(qid)
 			{
 			console.log("Clicked A, Go to checkFinalAnswer(A)");	
 			}
+			a_MainText.off('mouseup');
+			b_MainText.off('mouseup');
+			c_MainText.off('mouseup');
+			d_MainText.off('mouseup');
+			
 			checkFinalAnswer(qid,1)
 		});
+		
+		a_MainText.on('mouseover',function(){
+		
+		a_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		a_MainText.on('mouseout',function(){
+			a_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});
+		
 		
 		textLayer.add(a_MainText);
 		textLayer.draw();
@@ -1303,8 +1341,47 @@ function setFinalAText(qid)
 			{
 			console.log("Clicked B, Go to checkFinalAnswer(B)");	
 			}
+			
+			a_MainText.off('mouseup');
+			b_MainText.off('mouseup');
+			c_MainText.off('mouseup');
+			d_MainText.off('mouseup');
+			
 			checkFinalAnswer(qid,2)
 		});
+		
+		b_MainText.on('mouseover',function(){
+		
+		b_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		b_MainText.on('mouseout',function(){
+			b_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});		
+		
 		textLayer.add(b_MainText);
 		textLayer.draw();
 		b_MainText.transitionTo({
@@ -1351,8 +1428,48 @@ function setFinalAText(qid)
 			{
 			console.log("Clicked C, Go to checkFinalAnswer(C)");	
 			}
+			a_MainText.off('mouseup');
+			b_MainText.off('mouseup');
+			c_MainText.off('mouseup');
+			d_MainText.off('mouseup');
+			
 			checkFinalAnswer(qid,3)
 		});
+		
+		
+		c_MainText.on('mouseover',function(){
+		
+		c_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		c_MainText.on('mouseout',function(){
+			c_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});
+		
+		
 		
 		textLayer.add(c_MainText);
 		textLayer.draw();
@@ -1398,8 +1515,47 @@ function setFinalAText(qid)
 			{
 			console.log("Clicked D, Go to checkFinalAnswer(D)");	
 			}
+			
+			a_MainText.off('mouseup');
+			b_MainText.off('mouseup');
+			c_MainText.off('mouseup');
+			d_MainText.off('mouseup');
+			
 			checkFinalAnswer(qid,4)
 		});
+		
+		d_MainText.on('mouseover',function(){
+		
+		d_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		d_MainText.on('mouseout',function(){
+			d_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});
+		
 		textLayer.add(d_MainText);
 		textLayer.draw();
 		d_MainText.transitionTo({
