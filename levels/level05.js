@@ -559,15 +559,15 @@ function teacher5()
 					}
 					if(tid == 3)
 					{
-					drawFinalText(1, " text 3"); 
+					drawFinalText(1, "gelukkig kan je het opnieuw proberen, geloof in jezelf"); 
 					}
 					if(tid == 4)
 					{
-					drawFinalText(1, " text 4"); 
+					drawFinalText(1, "Geen Unity 3D voor jou.. als je wilt kan je opnieuw proberen"); 
 					}
 					if(tid == 5)
 					{
-					drawFinalText(1, " text 5"); 
+					drawFinalText(1, "jij dacht toch niet echt dat je hier goedgenoeg voor bent... als je wil kom gerust terug voor revange"); 
 					}
 					},2300);
 					
@@ -697,7 +697,7 @@ function teacher5()
            			duration: 1,
 				});
 				
-	drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen over kabouter meer voor jou.");
+	drawFinalText(1,"De vraag is goed beantwoord, Maar geen vragen kabouter vragen meer voor jou.");
 		setTimeout(function()
 				{
 					teacher.transitionTo(
@@ -902,11 +902,11 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					
 					setTimeout(function()
 				{	
-					setSText(600, 300, 15, "Willem1");
-					setSText(450, 300, 15, "Willem2");
-					setSText(300, 300, 15, "Willem3");
-					setSText(150, 300, 15, "Willem4");
-					setSText(800, 300, 15, "Willem5");
+					setSText(600, 350, 15, "Rene van Dijck,");
+					setSText(450, 350, 15, "math");
+					setSText(300, 350, 15, "Robin Hilt");
+					setSText(150, 350, 15, "Luc Peersman");
+					setSText(800, 350, 15, "Willem Verlijsdonk");
 				},32000);
 				
 				setTimeout(function()
