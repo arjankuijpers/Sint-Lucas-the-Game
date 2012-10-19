@@ -853,7 +853,9 @@ default:
 			image: iconImg,
 		});
 			popUpLayer.add(icon);
+			popUpLayer.moveToTop();
 			popUpLayer.draw();
+			popUpLayer.moveToTop();
 			
 			log("Pop Up transition fade-in start");
 			rect.transitionTo(
