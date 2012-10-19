@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05077 ,QJS integrated"
+var version = "Game v05078 ,QJS integrated"
 
 var debug = 1;
 
@@ -40,6 +40,7 @@ var questNumber = 0;
 var levelFinal = 1; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
 var statusLevel = new Array();
+// 1 is open, 2 is closed
 statusLevel[1] = 1;
 statusLevel[2] = 1;
 statusLevel[3] = 2;
