@@ -752,8 +752,17 @@ default:
 }
 }
 
-	function showPopUp(text, type)
+	function setAchievement(aid)
 	{
+		showPopUp(achievementText[aid]);
+	}
+	
+	var popupActive = 0;
+	function showPopUp(text)
+	{
+		if(popupActive == 0)
+		{
+		popupActive = 1;
 		achievement.currentTime = 0;
 		achievement.play();
 		
@@ -902,7 +911,14 @@ default:
 			setTimeout(function(){
 				log("Remove popUpLayer");
 					stage.remove(popUpLayer);
-					log("Remove popUpLayer: DONE");},8000);
+					log("Remove popUpLayer: DONE");
+					popupActive = 0;},8000);
+					
+		}
+		else
+		{
+		log("popup is already on screen :: " + popupActive);
+		}
 					
 	}
 

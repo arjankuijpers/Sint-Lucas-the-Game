@@ -93,14 +93,16 @@ console.log("Start Text Messages");
 		textLayer.removeChildren();
 		textLayer.draw();
 		
+		
 		splash.src = "assets/mbg.png";
 		if(debug == 1)
 		{
 		console.log("Welkom01 bg geladen (vervangen voor Createc)");
 		}
-		
 		setText(200,300,'beantwoord de vragen Juist');
 		textLayer.draw();
+		
+		setAchievement(2);
 		
 		if(debug ==1)
 		{

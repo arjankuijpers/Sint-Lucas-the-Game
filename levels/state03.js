@@ -98,7 +98,7 @@ console.log("initializing State 03(Menu)");
 			{
 			console.log("Clicked Top Score, Go to topscores");	
 			}
-			showPopUp("Test Achyvement", 1)
+			setAchievement(1);
 			
 		});
 		

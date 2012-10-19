@@ -57,7 +57,7 @@ console.log("Start State Level04 FINISHED");
 		setSText(275,250,20, '=================');
 		setSText(275,280,20, 'Algemene Voortgang: ' + allProgress + "%");
 	
-		
+		setAchievement(1);
 		
 		try{
 		characterLayer.moveToTop();
