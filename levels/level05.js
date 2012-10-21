@@ -913,8 +913,8 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 				{	
 				log("Set Score and timeleft text");
 					score[0] = score[1] + score[2] + score[3] + score[4];
-					setSText(475,400,15,"Totale Score: " + score[0]);
-					setSText(475,430,15,"Tijd over   : " + timeLeft + "Seconden");
+					setSText(475,400,20,"Totale Score: " + score[0]);
+					setSText(475,430,20,"Tijd over   : " + timeLeft + " Seconden");
 				},36000);
 				
 				setTimeout(function()
