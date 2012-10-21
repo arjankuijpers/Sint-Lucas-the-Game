@@ -5,7 +5,7 @@
 
 
 SOFTWARE Name: Sint Lucas The Game (by Createc)
-SOFTWARE Release/Version: v1000
+SOFTWARE Release/Version: v1000(_UNDER DEVELOPMENT_)
 
 
 
@@ -18,7 +18,7 @@ KNOWN ISSUES: has to be adressed
 
 ——————————————————-
 
-Date: 16-10-2012
+Date: 22-10-2012
 
 Contact us at:
 arjankuijpers@live.nl

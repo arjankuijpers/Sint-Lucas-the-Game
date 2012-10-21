@@ -275,7 +275,7 @@ function setRoamLocation(loc){
 		east.show();
 		
 		drawRoamText(1,statusLevel[1], "Naar de aula Level01 (" + progress[1] + "%)");
-		drawRoamText(2,0, "terug naar Ingang.");
+		drawRoamText(2,0, "Richting ingang - (level03).");
 		drawRoamText(3,0,"G Vleugel");
 		drawRoamText(4,0, "Naar de B vleugel");
 		
@@ -480,14 +480,14 @@ function drawRoamText(dir, state, text)
 		
 		case 2:
 		log("Roam.JS - R386 :: Case 2 use in switch State^^ text :" + text);
-		color  = "#FF0000";
+		color  = "#FF4505";
 		text += " - Op Slot";
 		break;
 		
 		case 3:
 		log("Roam.JS - R392 :: Case 3 use in switch State^^ text :" + text);
 		color  = "#3FF6FF";
-		text += " - Gespeeld";
+		text += " - Voltooid";
 		break;
 		
 		case 4:
@@ -525,6 +525,13 @@ function drawRoamText(dir, state, text)
             opacity: 0.7,
             duration: 2,
 		});
+		
+		if(state == 2)
+		{
+		north.on('mouseup', function() {
+			levelFirst();
+		});	
+		}
 		break;
 		
 		case 2:
@@ -548,6 +555,13 @@ function drawRoamText(dir, state, text)
             opacity: 0.7,
             duration: 2,
 		});
+		
+		if(state == 2)
+		{
+		south.on('mouseup', function() {
+			levelFirst();
+		});	
+		}
 		break;
 		
 		case 3:
@@ -572,6 +586,12 @@ function drawRoamText(dir, state, text)
             duration: 2,
 		});
 		
+		if(state == 2)
+		{
+		west.on('mouseup', function() {
+			levelFirst();
+		});	
+		}
 		break;
 		
 		case 4:
@@ -595,6 +615,12 @@ function drawRoamText(dir, state, text)
             duration: 2,
 		});
 		
+		if(state == 2)
+		{
+		east.on('mouseup', function() {
+			levelFirst();
+		});	
+		}
 		break;
 		
 		default:
@@ -1325,4 +1351,83 @@ function askFinal()
 		textLayer.draw();
 		
 	log("Function askFinal Ended R1368");
+}
+
+function levelFirst(){
+	onScreen =  1;
+	var textAsk = "Dit level is gesloten, haal eerst de onderliggende levels.";
+	var rect = new Kinetic.Rect({
+          x: 0,
+          y: 0,
+          width: 950,
+          height: 500,
+          fill: 'grey',
+          stroke: 'black',
+          strokeWidth: 1,
+		  opacity: 0,
+        });
+			textLayer.add(rect);
+			textLayer.draw();
+			rect.transitionTo({
+            opacity: 0.75,
+            duration: 1,
+		});
+		
+		rect.on('mouseup',function(){
+			textLayer.remove(rect);
+			textLayer.remove(askText);
+			textLayer.draw();
+			
+			onScreen = 0;
+		});
+
+			askText = new Kinetic.Text({
+       		   	x: 0,
+        	    y:  stage.getHeight() /4,
+          	   	text: textAsk,
+		  	    padding: 15,
+		  		stroke:'#ecede9',
+          		strokeWidth: 5,
+          		fill: {
+            		start: 	{
+              			x: 0,
+              			y: 0
+            				},
+            		end: 	{
+              			x: 200,
+              			y: 200
+            				},
+            		colorStops: [0, '#4F2009', 1, 'black']
+          			  },
+          fontSize:  30,
+          fontFamily: 'Calibri',
+          textFill: '#FF4505',
+          align: 'center',
+          opacity: 0.0,
+		  cornerRadius: 20,
+        });	
+		
+		textLayer.add(askText);
+		textLayer.draw();
+		askText.transitionTo({
+            opacity: 0.75,
+            duration: 2,
+		});
+		askText.on('mouseup',function(){
+			textLayer.remove(rect);
+			textLayer.remove(askText);
+			textLayer.draw();
+			onScreen = 0;
+		});
+		
+		setTimeout(function(){
+			
+			if(onScreen == 1)
+			{
+			textLayer.remove(rect);
+			textLayer.remove(askText);
+			textLayer.draw();
+			}
+		},7500);
+	
 }

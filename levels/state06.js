@@ -77,7 +77,7 @@ console.log("Start Text Messages");
 }
 	
 		//function declared in Engine under Chapter 'Text'	
-		setText(150,350,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op Continue om over te slaan.\n Veel Plezier Namens Createc.');
+		setText(150,350,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op de knop hierboven om over te slaan.\n Veel Plezier Namens Createc.');
 		if(debug ==1)
 		console.log("Text 'one' has been drawn");
 		
@@ -99,7 +99,7 @@ console.log("Start Text Messages");
 		{
 		console.log("Welkom01 bg geladen (vervangen voor Createc)");
 		}
-		setText(200,300,'beantwoord de vragen Juist');
+		setText(200,300,'Loop door het gebouw of gebruik de map.');
 		textLayer.draw();
 		
 		setAchievement(2);
@@ -117,7 +117,7 @@ console.log("Start Text Messages");
 			textLayer.removeChildren();
 			textLayer.draw();
 			
-			setText(400,400,'Score zo hoog mogenlijk, de Tijd is een Bonus');
+			setText(400,400,'beantwoord de vragen juist en Score zo hoog mogenlijk.');
 		textLayer.draw();
 		if(debug ==1)
 		{
@@ -131,7 +131,7 @@ console.log("Start Text Messages");
 			textLayer.removeChildren();
 			textLayer.draw();
 			
-			setText(400,250,'Haal aan het einde de Top Score');
+			setText(400,250,'Open alle levels en ga naar het eind level');
 		textLayer.draw();
 		//log
 		log("Text 'Five' has been drawn");
