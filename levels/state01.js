@@ -11,15 +11,18 @@ console.log("initializing State 01(AnyState)");
 
 	if(debug == 1)
 console.log("Set collision field");
-a_X1 = 616;
+a_X1 = 610;
 a_Y1 = -23;
 
-a_X2 = 800;
-a_Y2 = 62;
+a_X2 = 860;
+a_Y2 = 112;
 
 
 backgroundImg = new Image();
-backgroundImg.src = "assets/mbg.png";
+	backgroundImg.src = "assets/bg.png";
+
+var slImage = new Image();
+	slImage.src = "assets/sintlucas.png";
 
 dragHereImg = new Image();
 dragHereImg.src = "assets/drag_here.png";
@@ -43,6 +46,35 @@ background = new Kinetic.Image(
             duration: 2,
 		});
 }
+	
+	
+	slImage.onload = function() {
+	var sintlucas = new Kinetic.Image(
+		{
+			x: 0,
+			y: 0,
+			image: slImage,
+			draggable: false,
+			opacity: 0,
+		});
+		
+		backgroundLayer.add(sintlucas);
+		backgroundLayer.draw();
+		sintlucas.transitionTo({
+			x: 50,
+			y:10,
+            opacity: 1,
+            duration: 3,
+		});
+		
+	}
+
+
+
+
+
+
+
 dragHereImg.onload = function() {
 dragHere = new Kinetic.Image(
 	{
@@ -55,7 +87,7 @@ dragHere = new Kinetic.Image(
 	characterLayer.add(dragHere);
 		
 		dragHere.transitionTo({
-            opacity: 0.9,
+            opacity: 0.8,
             duration: 3,
 		});
 }

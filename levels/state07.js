@@ -6,7 +6,7 @@ function initState07(){
 			{
 				log("Set wallpaper");
 					var splash = new Image();
-					splash.src = "assets/wall.png";
+					splash.src = "assets/bg.png";
 	
 					splash.onload = function()
 					 {

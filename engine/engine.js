@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05078 ,QJS integrated"
+var version = "Game v05080 ,QJS integrated"
 
 var debug = 1;
 
@@ -37,7 +37,7 @@ var allGood = 0;
 var inLevel = 0;
 var questNumber = 0;
 
-var levelFinal = 1; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
+var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////////!!!!!!!!!!!!!!!////////!!!!!!
 
 var statusLevel = new Array();
 // 1 is open, 2 is closed
@@ -465,7 +465,7 @@ function showAnswer(good, qID){
 			 }
 	
 	var continueImg = new Image();
-	continueImg.src = "assets/sc_con_k.png";
+	continueImg.src = "assets/button.png";
 			 
 			 leraarImg.onload = function() {
 		var leraar = new Kinetic.Image(
@@ -1139,6 +1139,38 @@ var a_MainText = new Kinetic.Text({
 			d_MainText.off('mouseup');
 		});
 		
+		a_MainText.on('mouseover',function(){
+		
+		a_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		a_MainText.on('mouseout',function(){
+			a_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});
+		
 		
 		
 		textLayer.add(a_MainText);
@@ -1190,6 +1222,38 @@ var a_MainText = new Kinetic.Text({
 			b_MainText.off('mouseup');
 			c_MainText.off('mouseup');
 			d_MainText.off('mouseup');
+		});
+		
+		b_MainText.on('mouseover',function(){
+		
+		b_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		b_MainText.on('mouseout',function(){
+			b_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
 		});
 		
 		
@@ -1244,6 +1308,38 @@ var a_MainText = new Kinetic.Text({
 			d_MainText.off('mouseup');
 		});
 		
+		c_MainText.on('mouseover',function(){
+		
+		c_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		c_MainText.on('mouseout',function(){
+			c_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
+		});
+		
 		textLayer.add(c_MainText);
 		textLayer.draw();
 		c_MainText.transitionTo({
@@ -1293,6 +1389,38 @@ var a_MainText = new Kinetic.Text({
 			b_MainText.off('mouseup');
 			c_MainText.off('mouseup');
 			d_MainText.off('mouseup');
+		});
+		
+		d_MainText.on('mouseover',function(){
+		
+		d_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, 'white', 1, 'black']
+          });
+		  textLayer.draw();
+		
+		});
+		
+		d_MainText.on('mouseout',function(){
+			d_MainText.setFill({
+            start: {
+              x: 0,
+              y: 0
+            },
+            end: {
+              x: 380,
+              y: 200
+            },
+            colorStops: [0, '#4F2009', 1, 'black']
+          });
+		  textLayer.draw();
 		});
 		
 		textLayer.add(d_MainText);

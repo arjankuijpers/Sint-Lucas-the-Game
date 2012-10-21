@@ -27,6 +27,7 @@ console.log("initializing State 02(Splash)");
 		});
 	};
 	
+	
 	if(debug == 1)
 	{
 	var simpleText = new Kinetic.Text({

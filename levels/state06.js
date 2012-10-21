@@ -54,7 +54,7 @@ console.log("initializing State 06 (Tutorial)");
 			}
 			skip = 1;
 			textLayer.remove(con);
-			setSText(10, 20, 15, "Tutorial skipped");
+			setSText(10, 20, 15, "Tutorial Overgeslagen");
 		});
 		
 		textLayer.add(con);
@@ -77,7 +77,7 @@ console.log("Start Text Messages");
 }
 	
 		//function declared in Engine under Chapter 'Text'	
-		setText(150,350,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op Continue om overteslaan.\n Veel Plezier Namens Createc.');
+		setText(150,350,'Welkom, Nu Volgt eerst een Tutorial \n\n Klik op Continue om over te slaan.\n Veel Plezier Namens Createc.');
 		if(debug ==1)
 		console.log("Text 'one' has been drawn");
 		

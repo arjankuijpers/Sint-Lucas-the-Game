@@ -18,7 +18,7 @@ function initLevel02_Fin(){
 	if(debug == 1)
 console.log("Start State Level02 FINISHED");
 	var mbg = new Image();
-	mbg.src = "assets/mbg.png";
+	mbg.src = "assets/bg.png";
 	
 	
 	mbg.onload = function() {

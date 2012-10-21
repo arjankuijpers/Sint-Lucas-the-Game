@@ -5,7 +5,7 @@ function initState04(){
 console.log("initializing State 04 (Top Scores)");
 
 	var splash = new Image();
-	splash.src = "assets/mbg.png";
+	splash.src = "assets/bg.png";
 	
 	splash.onload = function() {
 	background = new Kinetic.Image(

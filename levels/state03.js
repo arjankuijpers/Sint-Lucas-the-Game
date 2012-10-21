@@ -4,8 +4,11 @@ function initState03(){
 	if(debug == 1)
 console.log("initializing State 03(Menu)");
 
+stage.add(backgroundLayer);
+stage.add(textLayer);
+
 	var mbg = new Image();
-	mbg.src = "assets/mbg.png";
+	mbg.src = "assets/bg.png";
 	
 	mbg.onload = function() {
 	background = new Kinetic.Image(
@@ -23,31 +26,60 @@ console.log("initializing State 03(Menu)");
 		
 		background.transitionTo({
             opacity: 1,
-            duration: 2,
+            duration: 1,
 		});
+		
+		
+		
+		var slImage = new Image();
+	slImage.src = "assets/sintlucas.png";
+	var sintlucas = new Kinetic.Image(
+		{
+			x: 0,
+			y: 0,
+			image: slImage,
+			draggable: false,
+			opacity: 0,
+		});
+		
+		backgroundLayer.add(sintlucas);
+		backgroundLayer.draw();
+		sintlucas.transitionTo({
+			x: 50,
+			y:10,
+            opacity: 1,
+            duration: 3,
+		});
+		setMenuText();
 	};
 	
+}
+
+function setMenuText(){
+		
+	
 	var m_MainText = new Kinetic.Text({
-          x: 650,
+          x: 850,
           y: 50,
-          text: 'Hoofd Menu',
+          text: 'HoofdMenu',
           fontSize: 30,
-          fontFamily: 'Calibri',
+          fontFamily: 'Segoe Script',
           textFill: 'Orange',
 		  opacity: 0,
         });
 		textLayer.add(m_MainText);
 		m_MainText.transitionTo({
+			x: 650,
             opacity: 1,
             duration: 2,
 		});
 		
 		var m_PlayText = new Kinetic.Text({
-          x: 735,
-          y: 100,
+          x: 850,
+          y: 120,
           text: 'Play!',
           fontSize: 25,
-          fontFamily: 'Calibri',
+          fontFamily: 'Segoe Script',
           textFill: 'red',
 		  opacity: 0,
         });
@@ -79,58 +111,19 @@ console.log("initializing State 03(Menu)");
 		
 		textLayer.add(m_PlayText);
 		m_PlayText.transitionTo({
+			x: 735,
             opacity: 1,
             duration: 2,
 		});
 		
-		var m_ScoreText = new Kinetic.Text({
-          x: 735,
-          y: 150,
-          text: 'Top Scores',
-          fontSize: 25,
-          fontFamily: 'Calibri',
-          textFill: 'lightred',
-		  opacity: 0,
-        });
-		
-		m_ScoreText.on('mouseup tap',function(){
-			if(debug == 1)
-			{
-			console.log("Clicked Top Score, Go to topscores");	
-			}
-			setAchievement(1);
-			
-		});
-		
-		m_ScoreText.on('mouseover',function(){
-			if(debug == 1)
-			{
-			console.log("MouseOver Top Scores, cursor pointer");	
-			}
-			document.body.style.cursor = 'pointer';
-		});
-		
-		m_ScoreText.on('mouseout',function(){
-			if(debug == 1)
-			{
-			console.log("MouseOut Top Scores, cursor default");	
-			}
-			document.body.style.cursor = 'default';
-		});
-		
-		textLayer.add(m_ScoreText);
-		m_ScoreText.transitionTo({
-            opacity: 1,
-            duration: 2,
-		});
 		
 		var m_CreditsText = new Kinetic.Text({
-          x: 735,
-          y: 200,
+          x: 850,
+          y: 170,
           text: 'Credits',
           fontSize: 25,
-          fontFamily: 'Calibri',
-          textFill: 'black',
+          fontFamily: 'Segoe Script',
+          textFill: 'white',
 		  opacity: 0,
         });
 		
@@ -161,17 +154,18 @@ console.log("initializing State 03(Menu)");
 		
 		textLayer.add(m_CreditsText);
 		m_CreditsText.transitionTo({
+			x: 735,
             opacity: 1,
             duration: 2,
 		});
 		
 		var m_ExitText = new Kinetic.Text({
-          x: 735,
-          y: 250,
+          x: 850,
+          y: 220,
           text: 'Exit',
           fontSize: 25,
-          fontFamily: 'Calibri',
-          textFill: 'black',
+          fontFamily: 'Segoe Script',
+          textFill: 'white',
 		  opacity: 0,
         });
 		
@@ -203,6 +197,7 @@ console.log("initializing State 03(Menu)");
 		textLayer.add(m_ExitText);
 		stage.add(textLayer);
 		m_ExitText.transitionTo({
+			x: 735,
             opacity: 1,
             duration: 2,
 		});

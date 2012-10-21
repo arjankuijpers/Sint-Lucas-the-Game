@@ -902,11 +902,11 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					
 					setTimeout(function()
 				{	
-					setSText(600, 350, 15, "Rene van Dijck,");
-					setSText(450, 350, 15, "math");
-					setSText(300, 350, 15, "Robin Hilt");
-					setSText(150, 350, 15, "Luc Peersman");
-					setSText(800, 350, 15, "Willem Verlijsdonk");
+					setSText(100, 350, 15, "Rene van Dijck,");
+					setSText(450, 350, 15, "Arthur Wouters");
+					setSText(325, 350, 15, "Robin Hilt");
+					setSText(600, 350, 15, "Luc Peersman");
+					setSText(775, 350, 15, "Willem Verlijsdonk");
 				},32000);
 				
 				setTimeout(function()
@@ -987,7 +987,7 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					secondTextLayer.moveToTop();	
 					teacher2.transitionTo(
 				{
-           			 x:550,
+           			 x:500,
            			duration: 1,
 				});
 				
@@ -1017,7 +1017,7 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					secondTextLayer.moveToTop();	
 					teacher3.transitionTo(
 				{
-           			 x:450,
+           			 x:350,
            			duration: 1,
 				});
 				
@@ -1046,7 +1046,7 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					secondTextLayer.moveToTop();	
 					teacher4.transitionTo(
 				{
-           			 x:350,
+           			 x:175,
            			duration: 1,
 				});
 				
@@ -1075,7 +1075,7 @@ drawFinalText(1,"De vraag is goed beantwoord, blijkbaar heb je de 3 P's goed ond
 					secondTextLayer.moveToTop();	
 					teacher5.transitionTo(
 				{
-           			 x:250,
+           			 x:50,
            			duration: 1,
 				});
 				

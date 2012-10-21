@@ -17,8 +17,8 @@ log("Start Level01");
 	var he2 = new Image();
 	he2.src = "assets/he2.png";
 	
-	var mbg = new Image();
-	mbg.src = "assets/l01/01.png";
+	var bg = new Image();
+	bg.src = "assets/l01/01.png";
 	
 	he1.onload = function() {
 		var hudElement1 = new Kinetic.Image(
@@ -45,12 +45,12 @@ log("Start Level01");
 		
 	}
 	
-	mbg.onload = function() {		
+	bg.onload = function() {		
 		var background = new Kinetic.Image(
 		{
 			x: 0,
 			y: 0,
-			image: mbg,
+			image: bg,
 			draggable: false
 		});
 		
