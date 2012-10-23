@@ -92,7 +92,7 @@ console.log("initializing State 05(Credits)");
 		
 				setTimeout(function(){
 			textLayer.removeChildren();
-			//splash.src = "assets/max_linssen.png";
+			splash.src = "assets/max_linssen.png";
 			setCText(600,200,30, "3D Art");
 			setCText(600,250,20, "Max Linssen");
 			characterLayer.moveToTop();
