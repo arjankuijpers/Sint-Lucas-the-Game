@@ -14,9 +14,6 @@ log("Start Level01");
 	var he1 = new Image();
 	he1.src = "assets/he1.png";
 	
-	var he2 = new Image();
-	he2.src = "assets/he2.png";
-	
 	var bg = new Image();
 	bg.src = "assets/l01/01.png";
 	
@@ -32,18 +29,9 @@ log("Start Level01");
 		hudLayer.draw();
 	}
 		
-		he2.onload = function() {
-		var hudElement2 = new Kinetic.Image(
-		{
-			x: 0,
-			y: 0,
-			image: he2,
-		});
-	
-	//	hudLayer.add(hudElement2);
-		hudLayer.draw();
 		
-	}
+		
+	
 	
 	bg.onload = function() {		
 		var background = new Kinetic.Image(
@@ -68,7 +56,8 @@ log("Start Level01");
 		
 		
 		log("Set Quests");	
-		setQuest(1, 1);
+		setQuest(1,diff(lastPlayed));
+		lastPlayed = 1;
 		log("Done Setting Hud Stats");
 		try{
 		

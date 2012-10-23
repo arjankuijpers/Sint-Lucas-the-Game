@@ -113,10 +113,7 @@ function initBattle(){
 					});
 	
 			hudLayer.moveToTop();	
-		
-		
-		he.onload = function() {
-	hudElement = new Kinetic.Image(
+			hudElement = new Kinetic.Image(
 		{
 			x: 0,
 			y: 0,
@@ -196,9 +193,9 @@ function initBattle(){
 			secondTextLayer.draw();
 			
 			teacher1();
+		
 			
 			
-	};
 
 		
 }

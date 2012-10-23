@@ -18,7 +18,7 @@ a_X2 = 860;
 a_Y2 = 112;
 
 
-backgroundImg = new Image();
+	backgroundImg = new Image();
 	backgroundImg.src = "assets/bg.png";
 
 var slImage = new Image();
@@ -45,10 +45,10 @@ background = new Kinetic.Image(
             opacity: 1,
             duration: 2,
 		});
-}
-	
-	
-	slImage.onload = function() {
+		
+		
+		var slImage = new Image();
+	slImage.src = "assets/sintlucas.png";
 	var sintlucas = new Kinetic.Image(
 		{
 			x: 0,
@@ -66,8 +66,8 @@ background = new Kinetic.Image(
             opacity: 1,
             duration: 3,
 		});
-		
-	}
+}
+	
 
 
 

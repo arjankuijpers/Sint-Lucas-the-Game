@@ -14,12 +14,8 @@ log("Start Level02");
 	var he1 = new Image();
 	he1.src = "assets/he1.png";
 	
-	var he2 = new Image();
-	he2.src = "assets/he2.png";
-	
 	var mbg = new Image();
-  //mbg.src = "assets/l02/01.png";
-	mbg.src = "assets/createc.png";
+	mbg.src = "assets/l02/01.png";
 	
 	
 	
@@ -34,20 +30,7 @@ log("Start Level02");
 		hudLayer.add(hudElement1);
 		hudLayer.draw();
 	}
-		
-		he2.onload = function() {
-		var hudElement2 = new Kinetic.Image(
-		{
-			x: 0,
-			y: 0,
-			image: he2,
-		});
-	
-		//hudLayer.add(hudElement2);
-		hudLayer.draw();
-		
-	}
-	
+
 	mbg.onload = function() {		
 		var background = new Kinetic.Image(
 		{
@@ -72,7 +55,8 @@ log("Start Level02");
 		log("Set Quests");	
 		log("levelSave:" + levelSave);
 		log("difficultySave: " + difficultySave)
-		setQuest(2, 1);
+		setQuest(2, diff(lastPlayed));
+		lastPlayed = 2;
 		log(levelSave);
 		log(difficultySave)
 		

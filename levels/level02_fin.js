@@ -41,9 +41,19 @@ console.log("Start State Level02 FINISHED");
           y: 10,
           width: 500,
           height: 300,
-          fill: 'orange',
-          stroke: 'black',
-          strokeWidth: 2,
+          stroke:'#ecede9',
+          		strokeWidth: 5,
+          		fill: {
+            		start: 	{
+              			x: 0,
+              			y: 0
+            				},
+            		end: 	{
+              			x: 200,
+              			y: 200
+            				},
+            		colorStops: [0, '#4F2009', 1, 'black']
+          			  },
 		  cornerRadius: 20,
 		  opacity: 0.5
         });
@@ -78,8 +88,8 @@ console.log("Start State Level02 FINISHED");
 		conImg.onload = function() {
 		var con = new Kinetic.Image(
 		{
-			x: 350,
-			y: 275,
+			x: 375,
+			y: 325,
 			image: conImg,
 			draggable: false
 		});
@@ -88,6 +98,7 @@ console.log("Start State Level02 FINISHED");
 			{
 			console.log("Continue to level select");	
 			}
+				played[2] = 1;
 				stage.reset();
 				initRoam(40);
 		});

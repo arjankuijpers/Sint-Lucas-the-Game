@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05081 ,QJS integrated"
+var version = "Game v05082 ,QJS integrated"
 
 var debug = 1;
 
@@ -26,6 +26,16 @@ progress[1] = 0;
 progress[2] = 0;
 progress[3] = 0;
 progress[4] = 0;
+
+var played = new Array();
+
+played[1] = 0;
+played[2] = 0;
+played[3] = 0;
+played[4] = 0;
+
+//last played Level
+var lastPlayed = 0;
 
 var goodInLevel = new Array();
 	goodInLevel[1] = 0;
@@ -58,6 +68,7 @@ function setQuest(level, difficulty){
 	
 	levelSave = level;
 	difficultySave = difficulty;
+	log("levelSave: " + levelSave + "difficulty: " + difficulty);
 	
 	allProgress = (progress[1] + progress[2] + progress[3] + progress[4]) /4;
 	progress[levelSave] = goodInLevel[levelSave] / 5 * 100;
@@ -524,6 +535,18 @@ randomOut = Math.floor((high-(low-1))*Math.random()) + low;
 }
 
 
+function diff(levelfrom)
+{
+	var x = 1;
+	if(played[levelfrom] = 1 && progress[levelfrom] == 100)
+	{x = 3}
+	else if(played[levelfrom] = 1 && progress[levelfrom] <= 75)
+	{x = 2}
+	else if(played[levelfrom] = 1 && progress[levelfrom] <= 40)
+	{x = 1}
+return x;	
+}
+
 
 function setStatusLevel(){
 log("check and set status Levels - R499 - engine.JS");
@@ -533,7 +556,7 @@ if(progress[1] >= 75)
 	{
 		statusLevel[1] = 3;
 	}
-if(progress[1] < 75 && progress[1] != 0)
+if(progress[1] < 75 && played[1] == 1)
 	{
 		statusLevel[1] = 4;
 	}
@@ -544,7 +567,7 @@ if(progress[1] < 75 && progress[1] != 0)
 		{
 			statusLevel[2] = 3;
 		}
-	if(progress[2] < 75 && progress[2] != 0)
+	if(progress[2] < 75 && played[2] == 1)
 		{
 			statusLevel[2] = 4;
 		}
@@ -572,7 +595,7 @@ if(progress[1] < 75 && progress[1] != 0)
 		{
 			statusLevel[3] = 3;
 		}
-	if(progress[3] < 75 && progress[3] != 0)
+	if(progress[3] < 75 && played[3] == 1)
 		{
 			statusLevel[3] = 4;
 		}
@@ -583,7 +606,7 @@ if(progress[1] < 75 && progress[1] != 0)
 		{
 			statusLevel[4] = 3;
 		}
-	if(progress[4] < 75 && progress[4] != 0)
+	if(progress[4] < 75 && played[4] == 1)
 		{
 			statusLevel[4] = 4;
 		}
