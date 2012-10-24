@@ -1537,10 +1537,10 @@ function setBText(posX, posY, size, text){
 		});
 		
 		s_bckText.on('mouseover',function(){
-			setTextFill("red");
+			s_bckText.setTextFill("red");
 		});
 				s_bckText.on('mouseout',function(){
-			setTextFill("white");
+			s_bckText.setTextFill("white");
 		});
 		
 		textLayer.add(s_bckText);

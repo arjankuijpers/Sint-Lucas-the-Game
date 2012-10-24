@@ -65,7 +65,7 @@ function initState07(){
 		});
 		
 		setSText(350,10,35, "Selecteer een level");
-		setBText(500, 10, 18, "Loop vrij rond, klik hier")
+		setBText(750, 10, 15, "Loop vrij rond, klik hier")
 		
 	};
 	
