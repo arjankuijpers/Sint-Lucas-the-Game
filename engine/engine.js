@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Engine QuestionJS & Game Developed By Createc
-var version = "Game v05082 ,QJS integrated"
+var version = "Game v05084 ,QJS integrated"
 
 var debug = 1;
 
@@ -52,7 +52,7 @@ var levelFinal = 0; //suposed to be 0 //////////////////////////////////////////
 var statusLevel = new Array();
 // 1 is open, 2 is closed
 statusLevel[1] = 1;
-statusLevel[2] = 1;
+statusLevel[2] = 2;
 statusLevel[3] = 2;
 statusLevel[4] = 2;
 
@@ -114,9 +114,6 @@ case 2:
   break;
   case 3:
   getRandom(11,15);
-  break;
-  case 4:
-  getRandom(16, 20);
   break;
 default:
 	error_Alert(2);
@@ -269,13 +266,10 @@ break;
 answerArray = myAnswer2[questID].split("^");
 break;
 	case 3:
-answerArray = myAnswer2[questID].split("^");
+answerArray = myAnswer3[questID].split("^");
 break;
 	case 4:
-answerArray = myAnswer2[questID].split("^");
-break;
-	case 5:
-answerArray = myAnswer2[questID].split("^");
+answerArray = myAnswer4[questID].split("^");
 break;
 default:
 error_Alert(8);
@@ -540,7 +534,7 @@ function diff(levelfrom)
 	var x = 1;
 	if(played[levelfrom] = 1 && progress[levelfrom] == 100)
 	{x = 3}
-	else if(played[levelfrom] = 1 && progress[levelfrom] <= 75)
+	else if(played[levelfrom] = 1 && progress[levelfrom] <= 80)
 	{x = 2}
 	else if(played[levelfrom] = 1 && progress[levelfrom] <= 40)
 	{x = 1}
@@ -555,6 +549,7 @@ log("check and set status Levels - R499 - engine.JS");
 if(progress[1] >= 75)
 	{
 		statusLevel[1] = 3;
+		statusLevel[2] = 1;
 	}
 if(progress[1] < 75 && played[1] == 1)
 	{
@@ -651,7 +646,9 @@ function clear_Level(level){
 
 function wipe_Memory()
 {
-	
+	credits.currentTime = 0;
+	underGame.currentTime = 0;
+	final.currentTime = 0;
 	
 question_OS = 0;
 
@@ -798,19 +795,19 @@ default:
 		var tSize = 12;
 		
 		var rectX = 300;
-		var rectY = 300;
+		var rectY = 80;
 		
 		var rectWidth = 375;
 		var rectHeight = 50;
 		
 		var hTextX = 375;
-		var hTextY = 310;
+		var hTextY = 90;
 		
 		var textX = 375;
-		var textY = 330;
+		var textY = 110;
 		
 		var popIconX = 305;
-		var popIconY = 302;
+		var popIconY = 82;
 
 		var rect = new Kinetic.Rect
 		({

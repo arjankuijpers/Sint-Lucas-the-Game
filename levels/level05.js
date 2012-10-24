@@ -73,7 +73,7 @@ var circle5;
 var hudElement;
 var background;
 function initBattle(){
-	
+	underGame.pause();
 	final.play();
 	
 	characterLayer.remove(leraren);
@@ -598,6 +598,7 @@ function teacher5()
 					setTimeout(function()
 				{
 					stage.reset();
+					underGame.play();
 					initRoam(20);
 					},13000);
 		}

@@ -2,6 +2,7 @@
 
 function initState05(){
 	
+	underGame.pause();
 	log("<AUDIO> reset Credits time and volume");
 	credits.currentTime = 0;
 	credits.volume = 1;

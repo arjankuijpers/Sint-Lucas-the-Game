@@ -50,6 +50,11 @@ stage.add(textLayer);
             opacity: 1,
             duration: 3,
 		});
+		
+		log("underGame play");
+			log("underGame currentTime is 0");
+			underGame.currentTime = 0;
+			underGame.play();
 		setMenuText();
 	};
 	

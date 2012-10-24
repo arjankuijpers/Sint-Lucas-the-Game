@@ -11,7 +11,7 @@
 	
 	function initRoam(loc)
 		{
-			
+		
 	
 			if(debug == 1)
 				console.log("initializing Roam 01 (entrance)");
@@ -512,7 +512,7 @@ function drawRoamText(dir, state, text)
           text: text,
 		  padding: 2,
 		  fill: 'black',
-          fontSize:  12,		  
+          fontSize:  16,		  
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
@@ -542,7 +542,7 @@ function drawRoamText(dir, state, text)
           text: text,
 		  padding: 2,
 		  fill: 'black',
-          fontSize:  12,
+          fontSize:  16,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
@@ -572,7 +572,7 @@ function drawRoamText(dir, state, text)
           text: text,
 		  padding: 2,
 		  fill: 'black',
-          fontSize:  12,
+          fontSize:  16,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
@@ -597,12 +597,13 @@ function drawRoamText(dir, state, text)
 		case 4:
 		log("Roam.js -draw east Text: ");
 		eastText = new Kinetic.Text({
-          x: stage.getWidth() /4 * 3 -100,
+          x: stage.getWidth() /4 * 3 -175,
           y:  stage.getHeight() /2 + 25,
           text: text,
+		  width:100,
 		  padding: 2,
 		  fill: 'black',
-          fontSize:  12,
+          fontSize:  16,
           fontFamily: 'Calibri',
           textFill: color,
           align: 'center',
