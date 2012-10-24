@@ -600,7 +600,7 @@ function drawRoamText(dir, state, text)
           x: stage.getWidth() /4 * 3 -175,
           y:  stage.getHeight() /2 + 25,
           text: text,
-		  width:100,
+		  width:300,
 		  padding: 2,
 		  fill: 'black',
           fontSize:  16,

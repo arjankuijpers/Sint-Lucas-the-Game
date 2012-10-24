@@ -2,36 +2,6 @@
 
 function initState07(){
 	
-		if(levelFinal == 1)
-			{
-				log("Set wallpaper");
-					var splash = new Image();
-					splash.src = "assets/bg.png";
-	
-					splash.onload = function()
-					 {
-						background = new Kinetic.Image(
-						{
-							x: 0,
-							y: 0,
-							image: splash,
-							draggable: false,
-							opacity: 1,
-						});
-		
-							backgroundLayer.add(background);
-							stage.add(backgroundLayer);
-							showPopUp("Test achievement", 1);
-					 }
-	
-			log("R: 8 -  State07.js: levelFinal = 1");		
-		
-							
-			}
-			
-		else
-			{
-	
 			stage.add(textLayer);
 			stage.add(secondTextLayer);
 			stage.add(characterLayer);
@@ -119,7 +89,7 @@ function initState07(){
 		
 				if (progress[1] >= 75)
 		{
-		setSelectText("Level 1 (Done: "+ progress[1] + "%)");
+		setSelectText("Level 1 (Voltooid: "+ progress[1] + "%)");
 		}
 		else{
 			setSelectText("Level 1 (" + progress[1] + "%)");
@@ -156,7 +126,7 @@ function initState07(){
 		if (progress[2] >= 75)
 		{
 		polyLevel2.setFill("#FF8E00");
-		setSelectText("Level 2 (Done: "+ progress[2] + "%)");
+		setSelectText("Level 2 (Voltooid: "+ progress[2] + "%)");
 		}
 		else{
 		setSelectText("Level 2 (" + progress[2] + "%)");	
@@ -190,12 +160,12 @@ function initState07(){
             opacity: 0.6,
             duration: 1,
 		});
-		if(levelUnlock[3] != 1)
-		setSelectText("Level 3 (Locked!)")
-				else if (progress[3] >= 75)
+		if(levelStatus[3] == 2)
+		setSelectText("Level 3 (Op slot)")
+				else if (levelStatus[3] == 4)
 		{
 		polyLevel3.setFill("#FF8E00");
-		setSelectText("Level 3 (Done: "+ progress[3] + "%)");
+		setSelectText("Level 3 (Voltooid: "+ progress[3] + "%)");
 		}
 		else
 		{
@@ -231,13 +201,13 @@ function initState07(){
             opacity: 0.6,
             duration: 1,
 		});
-		if(levelUnlock[4] != 1)
-		setSelectText("Level 4 (Locked!)")
+		if(levelStatus[4] == 2)
+		setSelectText("Level 4 (Op slot)")
 		
 		else if (progress[4] >= 75)
 		{
 		polyLevel4.setFill("#FF8E00");
-		setSelectText("Level 4 (Done: "+ progress[4] + "%)");
+		setSelectText("Level 4 (Voltooid: "+ progress[4] + "%)");
 		}
 		else
 		{
@@ -258,14 +228,14 @@ function initState07(){
 			initLevel04();
 		});
 		
-		if(levelUnlock[3] != 1)
+		if(statusLevel[3] == 2)
 		{
 		polyLevel3.setFill("#585858");
 		polyLevel3.setStroke("grey");
 		polyLevel3.off('mouseup');
 		}
 		
-		if(levelUnlock[4] != 1)
+		if(statusLevel[4] == 2)
 		{
 		polyLevel4.setFill("#585858");
 		polyLevel4.setStroke("grey");
@@ -287,7 +257,7 @@ function initState07(){
 		
 console.log("Done Loading, State07(Level Select)");
 
-	}
+	
 	
 }
 

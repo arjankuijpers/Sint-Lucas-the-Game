@@ -161,23 +161,24 @@ myAnswer4[15] = "Buslijn 15^Buslijn 11^Buslijn 401^Buslijn 1^1";
 //FINAL LEVEL //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 finalQuestion = new Array();
-finalQuestion[1] = "Wat is 15 * 150";
-finalQuestion[2] = "Wat is ";
-finalQuestion[3] = "Wat is ";
+finalQuestion[1] = "Wat is Rekenblokken?";
+finalQuestion[2] = "Welk programma gebruiken wij om foto's te bewerken";
+finalQuestion[3] = "Wat";
 finalQuestion[4] = "Wat is ";
+finalQuestion[5] = "Wat is";
 
 finalAnswer = new Array();
-finalAnswer[11] = "iets";
-finalAnswer[12] = "iets meer";
-finalAnswer[13] = "beetje meer";
-finalAnswer[14] = "meer bij over ijsel";
-finalAnswer[15] = "1";
+finalAnswer[11] = "Blokken die iedereen gekregen heeft om te bouwen";
+finalAnswer[12] = "Uitleg hoe plus sommen moeten";
+finalAnswer[13] = "Je personlijke voortgang";
+finalAnswer[14] = "Digitale les methode";
+finalAnswer[15] = "4";
 
-finalAnswer[21] = "test";
-finalAnswer[22] = "testje";
-finalAnswer[23] = "testen";
-finalAnswer[24] = "veel test";
-finalAnswer[25] = "2";
+finalAnswer[21] = "Adobe Photoshop";
+finalAnswer[22] = "SAI";
+finalAnswer[23] = "MS Paint";
+finalAnswer[24] = "Coral painter";
+finalAnswer[25] = "1";
 
 finalAnswer[31] = "hoi";
 finalAnswer[32] = "hallow";
