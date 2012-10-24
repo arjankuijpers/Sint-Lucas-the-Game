@@ -1507,6 +1507,51 @@ function setHText(posX, posY, size, text){
 }
 
 
+	var s_bckText;
+function setBText(posX, posY, size, text){
+	if(debug ==1)
+	{
+	console.log("Set Btext: " + text)
+	}
+	s_bckText = new Kinetic.Text({
+          x: posX,
+          y: posY,
+          text: text,
+          fontSize: size,
+          fontFamily: 'Calibri',
+          textFill: 'White',
+          align: 'center',
+          shadow: {
+            color: 'black',
+            blur: 1,
+            offset: [5, 5],
+            opacity: 0
+          },
+          opacity: 0.0,
+        });
+		
+		s_bckText.on('mouseup',function(){
+			roaming = 1;
+			stage.reset();
+			initRoam(10);
+		});
+		
+		s_bckText.on('mouseover',function(){
+			setTextFill("red");
+		});
+				s_bckText.on('mouseout',function(){
+			setTextFill("white");
+		});
+		
+		textLayer.add(s_bckText);
+		textLayer.draw();
+		s_bckText.transitionTo({
+            opacity: 1,
+            duration: 2,
+		});
+				textLayer.draw();
+}
+
 
 var s_MainText;
 function setSText(posX, posY, size, text){

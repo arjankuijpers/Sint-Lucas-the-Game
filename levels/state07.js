@@ -12,7 +12,7 @@ function initState07(){
 	
 				log("Set wallpaper");
 				var splash = new Image();
-				splash.src = "assets/wall.png";
+				splash.src = "assets/bg.png";
 	
 				log("Set schoolimg");
 				var schoolImg = new Image();
@@ -64,7 +64,8 @@ function initState07(){
             duration: 2,
 		});
 		
-		setSText(350,10,35, "Select a Level");
+		setSText(350,10,35, "Selecteer een level");
+		setBText(500, 10, 18, "Loop vrij rond, klik hier")
 		
 	};
 	
@@ -160,9 +161,9 @@ function initState07(){
             opacity: 0.6,
             duration: 1,
 		});
-		if(levelStatus[3] == 2)
+		if(statusLevel[3] == 2)
 		setSelectText("Level 3 (Op slot)")
-				else if (levelStatus[3] == 4)
+				else if (statusLevel[3] == 4)
 		{
 		polyLevel3.setFill("#FF8E00");
 		setSelectText("Level 3 (Voltooid: "+ progress[3] + "%)");
@@ -201,10 +202,10 @@ function initState07(){
             opacity: 0.6,
             duration: 1,
 		});
-		if(levelStatus[4] == 2)
+		if(statusLevel[4] == 2)
 		setSelectText("Level 4 (Op slot)")
 		
-		else if (progress[4] >= 75)
+		else if (statusLevel == 4)
 		{
 		polyLevel4.setFill("#FF8E00");
 		setSelectText("Level 4 (Voltooid: "+ progress[4] + "%)");

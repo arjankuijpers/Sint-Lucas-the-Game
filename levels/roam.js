@@ -633,6 +633,14 @@ function drawRoamText(dir, state, text)
 		
 		
 		
+		
+		
+		
+	
+		
+		
+		
+		
 	}
 
 function addArrowEvents(){
