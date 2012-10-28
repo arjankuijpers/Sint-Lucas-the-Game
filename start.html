@@ -2,42 +2,34 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+  <title>Sint Lucas the Game, by Createc (Rens Verspagen, Max Linssen &amp; Arjan Kuijpers</title>
+  
+  
     <style>
       body {
-        margin: 0px;
-        padding: 0px;
+		  font-family: Verdana, Geneva, sans-serif;
+		  background-color:#333;
       }
-      canvas {
-        border: 1px solid #9C9898;
+		      #container {
+				  float:none;
+					margin:0 auto;
+				  width:950px;
+				  height:500px;		  
+		background-color:#000;	
       }
+	  
+	  h1{color:#900;}	  
+	  h2{color:#CCC;}
+	  
+	  #footer{
+		  font-size:9px;
+		  color:#FFF;
+		  
+	  }
+	  
     </style>
-    <script src="engine/kinetic-v4.0.1.js"></script>
-        <script src="engine/preload.js"></script>
-                <script src="engine/engine.js"></script>
-                <script src="engine/questions.js"></script>
-                
-            <script src="levels/level01.js"></script>
-            <script src="levels/level02.js"></script>
-            <script src="levels/level03.js"></script>
-            <script src="levels/level04.js"></script>
-            <script src="levels/level05.js"></script>
-            
-            
-              <script src="levels/level01_fin.js"></script>
-			  <script src="levels/level02_fin.js"></script>
-              <script src="levels/level03_fin.js"></script>
-              <script src="levels/level04_fin.js"></script>
-              
-              
-           		   <script src="levels/roam.js"></script>
-              
-						<script src="levels/state01.js"></script>
-             	  		<script src="levels/state02.js"></script>
-            		    <script src="levels/state03.js"></script>
-                 	    <script src="levels/state04.js"></script>
-               		    <script src="levels/state05.js"></script>
-                	    <script src="levels/state06.js"></script>
-                	    <script src="levels/state07.js"></script>
+    <script src="engine/game.js"></script>
+
                                 
 <script>
 
@@ -51,30 +43,41 @@ console.log("window.onload finished");
 
 }
 </script>
-      
-	
+
+
   </head>
-  <body onmousedown="return false;">   
-   <audio preload="auto" id="credits">
- 	 <source src="assets/credits.mp3" type="audio/mpeg">
- 	 <source src="assets/credits.ogg" type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
- <audio preload="auto" id="achievement">
- 	<source src="assets/pokemon.mp3" type="audio/mpeg">
-    <source src="assets/pokemon.ogg" type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
-<audio preload="auto" loop id="final">
- 	<source src="assets/final.mp3" type="audio/mpeg">
-    <source src="assets/final.ogg" type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
-<audio preload="auto" loop id="underGame">
- 	<source src="assets/undergame.m4a" type="audio/mpeg">
-    <source src="assets/undergame.ogg" type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
-    <div id="container"></div>
-  </body>
+  	<body onmousedown="return false;">   
+  	 <audio preload="auto" id="credits">
+ 	 	<source src="assets/credits.mp3" type="audio/mpeg">
+ 		 <source src="assets/credits.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+	</audio>
+ 	<audio preload="auto" id="achievement">
+ 		<source src="assets/pokemon.mp3" type="audio/mpeg">
+    	<source src="assets/pokemon.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+	</audio>
+	<audio preload="auto" loop id="final">
+ 		<source src="assets/final.mp3" type="audio/mpeg">
+   	 <source src="assets/final.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+	</audio>
+	<audio preload="auto" loop id="underGame">
+ 		<source src="assets/undergame.m4a" type="audio/mpeg">
+   	 <source src="assets/undergame.ogg" type="audio/ogg">
+	 Your browser does not support the audio element.
+	</audio>
+<div id="all">
+	<div id="Titel"><br>
+		<center>
+			<h1>Welkom</h1>
+			<h2>Sint Lucas the Game</h2>
+		</center>
+	</div>
+    
+	<div id="container"></div>
+    <div id="footer"><center>Copyright 2012 Createc (Rens Verspagen, Max Linssen & Arjan Kuijpers)</center></div>
+</div>
+
+</body>
 </html>

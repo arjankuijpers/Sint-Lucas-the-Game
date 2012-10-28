@@ -5,20 +5,20 @@
 
 
 SOFTWARE Name: Sint Lucas The Game (by Createc)
-SOFTWARE Release/Version: v1000(_UNDER DEVELOPMENT_)
+SOFTWARE Release/Version: v1000
 
 
 
 SYSTEM PREREQUISITES: HTML5 compatible browser (Google Chrome prefered)
 
-NEW FEATURES: first Version
-BUG FIXES: first Version
+NEW FEATURES: -
+BUG FIXES: -
 
 KNOWN ISSUES: has to be adressed
 
 ——————————————————-
 
-Date: 22-10-2012
+Date: 27-10-2012
 
 Contact us at:
 arjankuijpers@live.nl
